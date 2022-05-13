@@ -5,6 +5,7 @@ This project is about developing a recipe website.
 ## Table of Contents
 
 1. [Design](#design)
+2. [Project follow-up](#project-follow-up)
 
 ## Design
 
@@ -60,6 +61,19 @@ Together, the wireframes below are a great starting point for the development of
 
 ![image](https://user-images.githubusercontent.com/87392921/168366511-061497bd-3983-4409-b4f5-132a579446f0.png)
 ![image](https://user-images.githubusercontent.com/87392921/168367108-16854308-335c-4a3d-88d9-526afbd10c9b.png)
+
+## Project follow-up
+
+This section presents the status of the development of the <em>What's for Dinner</em> website along the way.
+
+### First set of user stories defined
+
+![image](https://user-images.githubusercontent.com/87392921/168377764-24ce531b-60ae-4e17-8682-23b9382b96d0.png)
+
+
+
+
+
 
 
 
