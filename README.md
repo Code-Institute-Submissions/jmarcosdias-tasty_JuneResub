@@ -53,7 +53,7 @@ Together, the wireframes below are a great starting point for the development of
 
 #### View recipe list
 
-![image](https://user-images.githubusercontent.com/87392921/168343594-fbe61e0f-d284-46d3-b0de-20dcae103223.png)
+![image](https://user-images.githubusercontent.com/87392921/168376267-d1926b42-ba3a-4613-ab98-d75a4848698f.png)
 ![image](https://user-images.githubusercontent.com/87392921/168343499-e5c7ccbf-5992-4bc1-83ad-e916ef1799ae.png)
 
 #### Create recipe
