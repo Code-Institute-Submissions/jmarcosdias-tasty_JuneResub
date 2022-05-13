@@ -1,1 +1,1 @@
-web: gunicorn tasty_project:wsgi
+web: gunicorn tasty:wsgi
