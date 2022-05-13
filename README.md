@@ -40,7 +40,7 @@ These are the users stories I have defined for the first version of the website.
 
 #### Create account
 
-![image](https://user-images.githubusercontent.com/87392921/168337103-6d0ae24b-4df5-4208-9ddc-6ef822eb2d74.png)
+![image](https://user-images.githubusercontent.com/87392921/168344041-18c22795-d9e1-4bc3-a16a-f4a524a72b81.png)
 ![image](https://user-images.githubusercontent.com/87392921/168336912-b00816a5-f39a-4b38-bd31-109a8fc72a27.png)
 
 #### View recipe list
