@@ -43,4 +43,9 @@ These are the users stories I have defined for the first version of the website.
 ![image](https://user-images.githubusercontent.com/87392921/168337103-6d0ae24b-4df5-4208-9ddc-6ef822eb2d74.png)
 ![image](https://user-images.githubusercontent.com/87392921/168336912-b00816a5-f39a-4b38-bd31-109a8fc72a27.png)
 
+#### View recipe list
+
+![image](https://user-images.githubusercontent.com/87392921/168343594-fbe61e0f-d284-46d3-b0de-20dcae103223.png)
+![image](https://user-images.githubusercontent.com/87392921/168343499-e5c7ccbf-5992-4bc1-83ad-e916ef1799ae.png)
+
 
