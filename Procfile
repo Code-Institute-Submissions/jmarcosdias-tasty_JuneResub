@@ -1,0 +1,1 @@
+web: gunicorn tasty_project:wsgi
