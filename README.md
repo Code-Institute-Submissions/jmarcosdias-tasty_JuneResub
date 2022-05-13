@@ -38,6 +38,14 @@ These are the users stories I have defined for the first version of the website.
 
 ### Wireframes
 
+Here are some of the wireframes I used to define what this first version of the <em>What's for Dinner</em> website will look like.
+
+I decided to not include the edit and view recipe wireframes here, so as to not overload the this section. These wireframes are very similar to the create recipe wireframe, here included.
+
+The log in and create account buttons are visible in the view recipe list page, in case the user is not logged in.
+
+Together, the wireframes below are a great starting point for the development of the <em>What's for Dinner</em> website.
+
 #### Create account
 
 ![image](https://user-images.githubusercontent.com/87392921/168344041-18c22795-d9e1-4bc3-a16a-f4a524a72b81.png)
