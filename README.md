@@ -36,3 +36,11 @@ These are the users stories I have defined for the first version of the website.
 * View recipe list: As a Site User I can view a list of recipes so that I can select a recipe to view
 * View recipe: As a Site User I can view a recipe I selected from the list of recipes so that I can learn how to cook this recipe
 
+### Wireframes
+
+#### Create account
+
+![image](https://user-images.githubusercontent.com/87392921/168337103-6d0ae24b-4df5-4208-9ddc-6ef822eb2d74.png)
+![image](https://user-images.githubusercontent.com/87392921/168336912-b00816a5-f39a-4b38-bd31-109a8fc72a27.png)
+
+
