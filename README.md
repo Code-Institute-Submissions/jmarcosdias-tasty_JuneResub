@@ -70,7 +70,7 @@ This section presents the status of the development of the <em>What's for Dinner
 
 ![image](https://user-images.githubusercontent.com/87392921/168377764-24ce531b-60ae-4e17-8682-23b9382b96d0.png)
 
-Before starting working on the user stories, the following steps were taken, to prepare the environment to work:
+Before starting working on the user stories, the following steps were taken, to prepare the environment:
 
 * Install django framework 
 * Install gunicorn http server
@@ -80,8 +80,8 @@ Before starting working on the user stories, the following steps were taken, to 
 * Create a new django project, named tasty_project
 * Create a new app, named whats_for_dinner_app
 * Update settings.py with the new app, allowed hosts, cloudinary settings, getting of secret key and database url, templates dir, root url configuration, wsgi application, static url and media url configuration
-* Update urls.py and admin.py to facilitate the use of django admin module
-* Insert some recipe sample records to facilitate the development and dev-test of the recipe list functionality
+* Update urls.py and admin.py, allowing django admin module to manage recipes
+* Insert some recipe sample records, preparing for the development of the view recipe list functionality
 
 ### Starting with the view recipe list user story
 
