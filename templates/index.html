@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class="container">
+      <div class="row">
+        {% for recipe in recipe_list %}
+          <div class="col-xs-12 col-sm-4">
+            <h2>{{ recipe.title }}</h2>
+            <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>  
+          </div>
+        {% endfor%}
+      </div>
+    </div>
+
+    {% if is_paginated %}
+    <ul class="pagination">
+      {% if page_obj.has_previous %}
+        <li><a href="?page={{ page_obj.previous_page_number }}">&laquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&laquo;</span></li>
+      {% endif %}
+      {% for i in paginator.page_range %}
+        {% if page_obj.number == i %}
+          <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+        {% else %}
+          <li><a href="?page={{ i }}">{{ i }}</a></li>
+        {% endif %}
+      {% endfor %}
+      {% if page_obj.has_next %}
+        <li><a href="?page={{ page_obj.next_page_number }}">&raquo;</a></li>
+      {% else %}
+        <li class="disabled"><span>&raquo;</span></li>
+      {% endif %}
+    </ul>
+    {% endif %}
+
+</div>
+
+{%endblock%}
