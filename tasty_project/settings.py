@@ -90,7 +90,6 @@ WSGI_APPLICATION = 'tasty_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-
 #DATABASES = {
 #   'default': {
 #      'ENGINE': 'django.db.backends.sqlite3',
@@ -101,8 +100,6 @@ WSGI_APPLICATION = 'tasty_project.wsgi.application'
 #   }
 #}
     
-# postgres://nbtoigxrzzdxgp:412963f5cb52081534480a65d581c03688f38312187b7428f7f94b4913683c8e@ec2-176-34-211-0.eu-west-1.compute.amazonaws.com:5432/d1q601nu0ev5kr
-
 if TEST:
     # Configuration for test database
     DATABASES = {
