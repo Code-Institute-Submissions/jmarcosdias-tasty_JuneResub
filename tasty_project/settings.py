@@ -12,9 +12,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
+
+DEV_ENVIRONMENT = False
+
 if os.path.isfile('env.py'):
     import env
+    DEV_ENVIRONMENT = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -29,6 +34,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+
+# Defines if it is testing
+TEST = 'test' in sys.argv
 
 ALLOWED_HOSTS = ['whats--for--dinner.herokuapp.com', 'localhost']
 
@@ -82,16 +90,31 @@ WSGI_APPLICATION = 'tasty_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
-DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-}
+#DATABASES = {
+#   'default': {
+#      'ENGINE': 'django.db.backends.sqlite3',
+#      'NAME': BASE_DIR / 'db.sqlite3',
+#      'TEST': {
+#         'NAME': 'test_database',
+#      }
+#   }
+#}
+    
+# postgres://nbtoigxrzzdxgp:412963f5cb52081534480a65d581c03688f38312187b7428f7f94b4913683c8e@ec2-176-34-211-0.eu-west-1.compute.amazonaws.com:5432/d1q601nu0ev5kr
+
+if TEST:
+    # Configuration for test database
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('HEROKU_POSTGRESQL_AMBER_URL')),
+    }
+    DATABASES['default']['TEST'] = {
+        'NAME': DATABASES['default']['NAME'],
+    }
+else:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL')),
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
