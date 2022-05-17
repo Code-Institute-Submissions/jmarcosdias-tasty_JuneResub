@@ -10,7 +10,7 @@ This project is about developing a recipe website.
 
 ## Design
 
-Putting myself in the user's position and trying to anticipate their needs, here are some example of questions I have asked myself:
+Putting myself in the user's position and trying to anticipate their needs, here are some examples of questions I have asked myself:
 
 * Why would a user wish to visit the <em>What's for Dinner</em> website?
 * What would make the users return?
