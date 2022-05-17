@@ -6,6 +6,7 @@ This project is about developing a recipe website.
 
 1. [Design](#design)
 2. [Project follow-up](#project-follow-up)
+3. [Automated tests](#automated-tests)
 
 ## Design
 
@@ -85,7 +86,20 @@ Before starting working on the user stories, the following steps were taken, to 
 
 ### Starting with the view recipe list user story
 
+Fri May 13 20:40 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168442707-5aba4960-23bb-4d9a-8983-f8be1292c173.png)
+
+### Recipe list user story done
+
+Mon May 17 01:22 2022 +0000
+![image](https://user-images.githubusercontent.com/87392921/168701190-04a767c6-c4ab-40da-836f-082288f5e7e2.png)
+
+## Automated tests
+
+python3 manage.py test --keepdb
+
+
+
 
 
 
