@@ -91,7 +91,7 @@ Fri May 13 20:40 2022 +0100
 
 ### Recipe list user story done
 
-Mon May 17 01:22 2022 +0000
+Tue May 17 01:25:41 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168701190-04a767c6-c4ab-40da-836f-082288f5e7e2.png)
 
 ## Automated tests
