@@ -5,8 +5,9 @@ This project is about developing a recipe website.
 ## Table of Contents
 
 1. [Design](#design)
-2. [Project follow-up](#project-follow-up)
-3. [Automated tests](#automated-tests)
+2. [Initial setup](#initial-setup)
+3. [Project follow-up](#project-follow-up)
+4. [Automated tests](#automated-tests)
 
 ## Design
 
@@ -63,13 +64,7 @@ Together, the wireframes below are a great starting point for the development of
 ![image](https://user-images.githubusercontent.com/87392921/168366511-061497bd-3983-4409-b4f5-132a579446f0.png)
 ![image](https://user-images.githubusercontent.com/87392921/168367108-16854308-335c-4a3d-88d9-526afbd10c9b.png)
 
-## Project follow-up
-
-This section presents the status of the development of the <em>What's for Dinner</em> website along the way.
-
-### First set of user stories defined
-
-![image](https://user-images.githubusercontent.com/87392921/168377764-24ce531b-60ae-4e17-8682-23b9382b96d0.png)
+## Initial setup
 
 Before starting working on the user stories, the following steps were taken, to prepare the environment:
 
@@ -84,7 +79,16 @@ Before starting working on the user stories, the following steps were taken, to 
 * Update urls.py and admin.py, allowing django admin module to manage recipes
 * Insert some recipe sample records, preparing for the development of the view recipe list functionality
 
-### Starting with the view recipe list user story
+## Project follow-up
+
+This section presents the status of the development of the <em>What's for Dinner</em> website along the way.
+
+### Starting the project with 8 user stories to do
+
+Fri May 13 20:40:28 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/168377764-24ce531b-60ae-4e17-8682-23b9382b96d0.png)
+
+### Starting working on the view recipe list user story
 
 Fri May 13 20:40 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168442707-5aba4960-23bb-4d9a-8983-f8be1292c173.png)
@@ -93,6 +97,12 @@ Fri May 13 20:40 2022 +0100
 
 Tue May 17 01:25:41 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168701190-04a767c6-c4ab-40da-836f-082288f5e7e2.png)
+
+### Starting working on the view recipe user story
+
+Tue May 17 22:11:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/168908599-94cd32ba-0ef3-43e2-ac74-d0b5298a61b1.png)
+
 
 ## Automated tests
 
