@@ -30,3 +30,27 @@ class TestViews(TestCase):
         self.assertContains(response, "recipe 3 title")
         self.assertContains(response, "recipe 3 short description")
 
+    def test_get_recipe(self):
+        user = User.objects.create(username='test2')
+        # inserts two recipes
+        recipe1 = Recipe.objects.create(title="recipe 1 title", author=user, 
+            slug="recipe-1-title", short_description='recipe 1 short description', 
+            ingredients="recipe 1 ingredients", method="recipe 1 method")
+        recipe2 = Recipe.objects.create(title="recipe 2 title", author=user, 
+            slug="recipe-2-title", short_description='recipe 2 short description', 
+            ingredients="recipe 2 ingredients", method="recipe 2 method")
+        # successful response getting the recipe 2
+        response = self.client.get('/recipe-2-title/')
+        self.assertEqual(response.status_code, 200)
+        # templates used
+        self.assertTemplateUsed(response, 'recipe.html')
+        self.assertTemplateUsed(response, 'base.html')
+        # title and short description of the recipe 2 are included
+        # in the response
+        self.assertContains(response, "recipe 2 title")
+        self.assertContains(response, "recipe 2 short description")
+        # title and short description of the recipe 1 are not included
+        # in the response
+        self.assertNotContains(response, "recipe 1 title")
+        self.assertNotContains(response, "recipe 1 short description")
+

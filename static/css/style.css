@@ -6,3 +6,12 @@ h1 {
 div {
     border: thin dashed green; 
 }
+
+.recipe-link {
+    text-decoration: none;
+    color: green;
+}
+
+.recipe-link:hover {
+    color: yellow;
+}
