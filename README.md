@@ -108,6 +108,12 @@ Tue May 17 22:12:05 2022 +0100
 Tue May 17 23:57:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168925325-f6e48f7c-cd82-4efb-9eca-2f783cf19bb9.png)
 
+Tue May 18 22:58:00 2022 +0100
+### Starting working on the account management user stories
+
+![image](https://user-images.githubusercontent.com/87392921/169162297-8dfc8815-2ca1-4063-9881-414b5d80d287.png)
+
+
 ## Automated tests
 
 python3 manage.py test --keepdb
