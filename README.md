@@ -123,6 +123,10 @@ Thu May 19 01:06:00 2022 +0100
 Thu May 20 11:13:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169505968-070db246-463f-48e1-8a3c-2ce45293eeee.png)
 
+### Start working on the create recipe user story
+
+Thu May 20 17:33:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/169572344-c5537216-93b4-439b-bf73-088f10793026.png)
 
 ## Automated tests
 
