@@ -2,18 +2,37 @@
 
 {% block content %}
 
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         {% for recipe in recipe_list %}
           <div class="col-xs-12 col-sm-4">
+
             <a href="{% url 'recipe' recipe.slug  %}" class="recipe-link">
+              <div class="card">
+                <div class="card-header">
+                  <h5 class="card-title">{{ recipe.title }}</h5>
+                </div>
+                <div class="card-body">
+                  <p class="card-text">{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
+                  {% if user.is_authenticated and user == recipe.author %}
+                    <a href="{% url 'delete_recipe' recipe.slug  %}" class="btn btn-primary">Delete</a>
+                  {% endif %}
+                </div>
+              </div>
+            </a>
+
+            <!-- <a href="{% url 'recipe' recipe.slug  %}" class="recipe-link">
               <h2>{{ recipe.title }}</h2>
               <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>  
-            </a>
+            </a> -->
           </div>
         {% endfor%}
       </div>
     </div>
+
+
+
+    
 
     {% if is_paginated %}
     <ul class="pagination">

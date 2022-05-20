@@ -1,17 +1,7 @@
-h1 {
-    color:blue;
-    background-color: yellow
-}
-
-div {
-    border: thin dashed green; 
-}
-
 .recipe-link {
     text-decoration: none;
-    color: green;
 }
 
 .recipe-link:hover {
-    color: yellow;
+    color: orange;
 }
