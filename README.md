@@ -83,12 +83,12 @@ Before starting working on the user stories, the following steps were taken, to 
 
 This section presents the status of the development of the <em>What's for Dinner</em> website along the way.
 
-### Starting the project with 8 user stories to do
+### Start the project with 8 user stories to do
 
 Fri May 13 20:40:28 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168377764-24ce531b-60ae-4e17-8682-23b9382b96d0.png)
 
-### Starting working on the view recipe list user story
+### Start working on the view recipe list user story
 
 Fri May 13 20:40 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168442707-5aba4960-23bb-4d9a-8983-f8be1292c173.png)
@@ -98,7 +98,7 @@ Fri May 13 20:40 2022 +0100
 Tue May 17 01:25:41 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168701190-04a767c6-c4ab-40da-836f-082288f5e7e2.png)
 
-### Starting working on the view recipe user story
+### Start working on the view recipe user story
 
 Tue May 17 22:12:05 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168908599-94cd32ba-0ef3-43e2-ac74-d0b5298a61b1.png)
@@ -108,7 +108,7 @@ Tue May 17 22:12:05 2022 +0100
 Tue May 17 23:57:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/168925325-f6e48f7c-cd82-4efb-9eca-2f783cf19bb9.png)
 
-### Starting working on the account management user stories
+### Start working on the account management user stories
 
 Wed May 18 22:58:06 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169162297-8dfc8815-2ca1-4063-9881-414b5d80d287.png)
@@ -117,6 +117,11 @@ Wed May 18 22:58:06 2022 +0100
 
 Thu May 19 01:06:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169174789-4f0d161c-e1d7-47ba-b0b6-5d4f09d1ab90.png)
+
+### Start working on the delete recipe user story
+
+Thu May 20 11:13:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/169505968-070db246-463f-48e1-8a3c-2ce45293eeee.png)
 
 
 ## Automated tests
