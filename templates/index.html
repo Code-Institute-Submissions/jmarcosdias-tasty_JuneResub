@@ -22,6 +22,7 @@
                 <div class="card-body">
                   <p class="card-text">{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
                   {% if user.is_authenticated and user == recipe.author %}
+                    <a href="{% url 'edit_recipe' recipe.slug  %}" class="btn btn-primary">Edit</a>
                     <a href="{% url 'delete_recipe' recipe.slug  %}" class="btn btn-primary">Delete</a>
                   {% endif %}
                 </div>

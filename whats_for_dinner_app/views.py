@@ -59,3 +59,30 @@ class DeleteRecipeView(View):
 class CreateRecipeView(generic.ListView):
     model = Recipe
     template_name = "create_recipe.html"
+
+
+class EditRecipeView(View):
+
+    def get(self, request, slug, *args, **kwargs):
+        queryset = Recipe.objects.order_by('title')
+        recipe = get_object_or_404(queryset, slug=slug)
+        # says wether the logged-in user is the owner of this recipe
+        if recipe.author == self.request.user:
+            owner = True
+        else:
+            owner = False
+        
+        return render(
+            request,
+            "delete_recipe.html",
+            {
+                "recipe": recipe,
+                "owner": owner
+            },
+        )
+
+    def post(self, request, slug, *args, **kwargs):
+        queryset = Recipe.objects.order_by('title')
+        recipe = get_object_or_404(queryset, slug=slug)
+        recipe.delete()
+        return redirect('home');
