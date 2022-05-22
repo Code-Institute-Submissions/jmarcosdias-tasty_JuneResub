@@ -55,3 +55,7 @@ class DeleteRecipeView(View):
         recipe.delete()
         return redirect('home');
 
+
+class CreateRecipeView(generic.ListView):
+    model = Recipe
+    template_name = "create_recipe.html"

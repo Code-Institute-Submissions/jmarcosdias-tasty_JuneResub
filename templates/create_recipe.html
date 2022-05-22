@@ -1,0 +1,30 @@
+{% extends 'base.html' %} {% block content %}
+
+{% if not user.is_authenticated %}
+    <strong>Please create an account so that you can create a recipe.</strong>
+{% endif %}
+
+<div class="container">
+    <div class="row">
+      <div class="col"><h1>{{ recipe.title }}</h1></div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Ingredients</h2>
+        <p>{% autoescape off %}{{ recipe.ingredients }}{% endautoescape %}</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h2>Method</h2>
+        <p>{% autoescape off %}{{ recipe.method }}{% endautoescape %}</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}
