@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
-from django.views import generic, View 
+from django.views import generic, View
+from django.template.defaultfilters import slugify
 from .models import Recipe
 from .forms import RecipeForm
 
@@ -56,9 +57,43 @@ class DeleteRecipeView(View):
         return redirect('home');
 
 
-class CreateRecipeView(generic.ListView):
-    model = Recipe
-    template_name = "create_recipe.html"
+class CreateRecipeView(View):
+
+    def get(self, request, *args, **kwargs):
+        return render(
+            request,
+            "create_recipe.html",
+            {
+                "recipe_form": RecipeForm()
+            },
+        )
+
+    def post(self, request, *args, **kwargs):
+        recipe_form = RecipeForm(data=request.POST)
+        if recipe_form.is_valid():
+            recipe = recipe_form.save(commit=False)
+            recipe.author = request.user
+            recipe.slug = slugify(recipe.title)
+            recipe.save()
+        else:
+            recipe_form = RecipeForm()
+
+        return render(
+            request,
+            "create_recipe.html",
+        )
+        # print("post recipe")
+        # title = request.POST.get('title')
+        # short_description = request.POST.get('short_description')
+        # ingredients = request.POST.get('ingredients')
+        # method = request.POST.get('method')
+        # Recipe.objects.create(title=title, author=request.user,
+        #   short_description=short_description, ingredients=ingredients, method=method)
+        # print("title = " + title)
+        # form = RecipeForm(request.POST)
+        # if form.is_valid():
+        # form.save()
+        # return redirect('home')
 
 
 class EditRecipeView(View):

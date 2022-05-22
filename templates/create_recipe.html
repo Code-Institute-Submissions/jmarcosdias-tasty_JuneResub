@@ -2,29 +2,53 @@
 
 {% if not user.is_authenticated %}
     <strong>Please create an account so that you can create a recipe.</strong>
-{% endif %}
-
-<div class="container">
-    <div class="row">
-      <div class="col"><h1>{{ recipe.title }}</h1></div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h2>Ingredients</h2>
-        <p>{% autoescape off %}{{ recipe.ingredients }}{% endautoescape %}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h2>Method</h2>
-        <p>{% autoescape off %}{{ recipe.method }}{% endautoescape %}</p>
-      </div>
+{% else %}
+<!-- <form method="post"">
+  {{ recipe_form }}
+  {% csrf_token %}
+  <button type="submit" class="btn">Submit</button>
+</form> -->
+<!-- <form method="post"">
+  <tr><th><label for="id_title">Title:</label></th><td><input type="text" name="title" maxlength="150" required id="id_title"></td></tr>
+<tr><th><label for="id_short_description">Short description:</label></th><td><textarea name="short_description" cols="40" rows="10" id="id_short_description">
+</textarea></td></tr>
+<tr><th><label for="id_ingredients">Ingredients:</label></th><td><textarea name="ingredients" cols="40" rows="10" id="id_ingredients">
+</textarea></td></tr>
+<tr><th><label for="id_method">Method:</label></th><td><textarea name="method" cols="40" rows="10" id="id_method">
+</textarea></td></tr>
+  {% csrf_token %}
+  <button type="submit" class="btn">Submit</button>
+</form> -->
+<form method=post>
+  <div class="row">
+    <div class="col">
+      <label for="id_title">Title</label>
+      <input type="text" class="form-control" id="id_title" name="title">
     </div>
   </div>
+  <div class="row">
+    <div class="col">
+      <label for="id_short_description">Short Description</label>
+      <input type="text" class="form-control" id="id_short_description" name="short_description">
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-4">
+      <label for="id_ingredients">Ingredients</label>
+      <textarea type="text" class="form-control" id="id_ingredients" name="ingredients">
+      </textarea>
+    </div>
+    <div class="col-sm-6">
+      <label for="id_method">Method</label>
+      <textarea type="text" class="form-control" id="id_method" name="method">
+      </textarea>
+    </div>
+    <div class="col-sm-2">
+      {% csrf_token %}
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+  </div>
+</form>
+{% endif %}
 
 {% endblock content %}
