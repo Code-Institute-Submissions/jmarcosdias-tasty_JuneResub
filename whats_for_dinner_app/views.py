@@ -46,7 +46,13 @@ class DeleteRecipeView(View):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
         recipe.delete()
-        return redirect('home')
+        return redirect('recipe_deleted')
+
+
+class RecipeDeleted(generic.ListView):
+    model = Recipe
+    template_name = "recipe_deleted.html"
+
 
 
 class CreateRecipeView(View):
