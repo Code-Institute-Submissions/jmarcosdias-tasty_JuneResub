@@ -134,9 +134,13 @@ Fri May 20 17:34:00 2022 +0100
 
 ### Start working on the edit recipe user story
 
-Sun May 22 11:14:00 2022 +0100
+Sun May 22 11:14:15 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169690266-99ff194d-55c2-4bc6-ad39-e6a7c0396556.png)
 
+### Create, edit and delete recipe user stories done
+
+Mon May 23 20:49:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/169895704-81e96644-0103-480f-92f7-35666739a9cb.png)
 
 ## Testing
 
