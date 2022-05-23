@@ -7,7 +7,9 @@ This project is about developing a recipe website.
 1. [Design](#design)
 2. [Initial setup](#initial-setup)
 3. [Project follow-up](#project-follow-up)
-4. [Automated tests](#automated-tests)
+4. [Testing](#testing)
+   1. [Validator tests](#validator-tests)
+   2. [Automated tests](#automated-tests)
 
 ## Design
 
@@ -20,7 +22,7 @@ After some design thinking work, I came up with the following.
 
 As a site user, I would like to:
 * Take a look at a list of recipes, from where I can select a recipe to view.
-* Spend some time viewing one recipe at a time, until I decide on one to prepare for dinner.
+* Spend some time viewing recipes, one recipe at a time, until I decide on one to prepare for dinner.
 * Be able to use my smartphone to view the recipe I have selected, so that I can view any details of this recipe while I am cooking.
 * Enjoy dinner, knowing I can count on <em>What's for Dinner</em> website next time.
 
@@ -43,16 +45,18 @@ These are the users stories I have defined for the first version of the website.
 
 Here are some of the wireframes I used to define what this first version of the <em>What's for Dinner</em> website will look like.
 
-I decided to not include the edit and view recipe wireframes here, so as to not overload the this section. These wireframes are very similar to the create recipe wireframe, here included.
+I decided to not include the edit and view recipe wireframes here, so as to not overload this section. These wireframes are very similar to the create recipe wireframe, here included.
 
 The log in and create account buttons are visible in the view recipe list page, in case the user is not logged in.
 
-Together, the wireframes below are a great starting point for the development of the <em>What's for Dinner</em> website.
+Together, the wireframes below were a great starting point for the development of the <em>What's for Dinner</em> website.
 
 #### Create account
 
 ![image](https://user-images.githubusercontent.com/87392921/168344041-18c22795-d9e1-4bc3-a16a-f4a524a72b81.png)
 ![image](https://user-images.githubusercontent.com/87392921/168336912-b00816a5-f39a-4b38-bd31-109a8fc72a27.png)
+
+For a better user experience, the create account user story is implemented with a Username field instead of the initially wireframed First Name and Last Name fields. This makes the registration process smoother and more likely to register a larger number of users.
 
 #### View recipe list
 
@@ -134,7 +138,16 @@ Sun May 22 11:14:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169690266-99ff194d-55c2-4bc6-ad39-e6a7c0396556.png)
 
 
-## Automated tests
+## Testing
+
+### Validator tests
+
+In order to improve the readability and consistency of the Python code, I have used the http://pep8online.com code checker.
+
+![image](https://user-images.githubusercontent.com/87392921/169820413-28dc900d-6301-4a53-9154-58250be27b84.png)
+
+
+### Automated tests
 
 python3 manage.py test --keepdb
 
