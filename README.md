@@ -142,6 +142,20 @@ Sun May 22 11:14:15 2022 +0100
 Mon May 23 20:49:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169895704-81e96644-0103-480f-92f7-35666739a9cb.png)
 
+### Create tasks for improving automated tests and for a better design of the landing page
+
+At this stage, the application is working.
+
+There is some time before the delivery day. This way new tasks were indentified and placed into the Kanban board.
+
+#### TASK: Improve automated tests
+Automated tests were developed for view recipe list and view recipe but there are no automated tests for create, edit and delete recipe. The automated tests must be reviewed in order to cover at least the CRUD functionalities.
+
+#### TASK: Improve appearance of the landing page 
+Landing page is working but not yet looking good. Some elements are very close together and this makes the website look unfinished. Some design work is needed in the landing page and then new similar tasks will be created for the remaining pages.
+
+![image](https://user-images.githubusercontent.com/87392921/169899937-1304d0f8-3994-48e8-aa0b-d73944d69fe4.png)
+
 ## Testing
 
 ### Validator tests
