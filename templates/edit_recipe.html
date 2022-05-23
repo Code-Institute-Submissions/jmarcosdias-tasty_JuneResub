@@ -2,38 +2,39 @@
 
 {% if user.is_authenticated and user == recipe.author %}
     <em>Editing...</em>
-    <p>Posting as: {{ user.username }}</p>
-    <p>{{ recipe.author }}</p>
-    <p>{{ user }}</p>
-    <form method="post"">
-        {% csrf_token %}
-        <button type="submit">Save</button>
+    <form method=post>
+      {{ form.errors }} {{ form.non_field_errors }} {{ message_to_user }}
+      <div class="row">
+        <div class="col">
+          <label for="id_title">Title</label>
+          <input type="text" class="form-control" id="id_title" name="title" value="{{ recipe.title }}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <label for="id_short_description">Short Description</label>
+          <input type="text" class="form-control" id="id_short_description" name="short_description" 
+            value="{{ recipe.short_description }}">
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <label for="id_ingredients">Ingredients</label>
+          <textarea type="text" class="form-control" id="id_ingredients" 
+            name="ingredients">{{ recipe.ingredients }}</textarea>
+        </div>
+        <div class="col-sm-6">
+          <label for="id_method">Method</label>
+          <textarea type="text" class="form-control" id="id_method" name="method">{{ recipe.method }}</textarea>
+        </div>
+        <div class="col-sm-2">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </div>
     </form>
 {% else %}
     <strong>Sorry but you cannot edit this recipe. You can only edit recipes you created.</strong>
 {% endif %}
-
-<div class="container">
-    <div class="row">
-      <div class="col"><h1>{{ recipe.title }}</h1></div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h2>Ingredients</h2>
-        <p>{% autoescape off %}{{ recipe.ingredients }}{% endautoescape %}</p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col">
-        <h2>Method</h2>
-        <p>{% autoescape off %}{{ recipe.method }}{% endautoescape %}</p>
-      </div>
-    </div>
-  </div>
 
 {% endblock content %}

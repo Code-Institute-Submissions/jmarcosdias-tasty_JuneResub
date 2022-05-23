@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRe
 from django.views import generic, View
 from django.template.defaultfilters import slugify
 from .models import Recipe
-from .forms import RecipeForm
+from .forms import RecipeForm, EditRecipeForm
 
 class RecipeList(generic.ListView):
     model = Recipe
@@ -109,7 +109,7 @@ class EditRecipeView(View):
         
         return render(
             request,
-            "delete_recipe.html",
+            "edit_recipe.html",
             {
                 "recipe": recipe,
                 "owner": owner
@@ -119,5 +119,16 @@ class EditRecipeView(View):
     def post(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
-        recipe.delete()
-        return redirect('home');
+        recipe.title = request.POST['title']
+        recipe.short_description = request.POST['short_description']
+        recipe.ingredients = request.POST['ingredients']
+        recipe.method = request.POST['method']
+        recipe.save()
+        return render(
+          request,
+          "edit_recipe.html",
+          {
+            "recipe": recipe,
+            "message_to_user": "Saved",
+          },
+        )

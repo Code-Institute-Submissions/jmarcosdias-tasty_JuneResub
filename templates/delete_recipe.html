@@ -5,10 +5,16 @@
     <p>Posting as: {{ user.username }}</p>
     <p>{{ recipe.author }}</p>
     <p>{{ user }}</p>
-    <form method="post"">
-        {% csrf_token %}
-        <button type="submit">Delete</button>
-    </form>
+    <div class="row">
+      <div class="column">
+        <form method="post"">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-primary">Delete</button>
+          <a href="{% url 'home' %}" class="btn btn-primary">Cancel</a>
+        </form>
+      </div>
+    </div>
+
 {% else %}
     <strong>Sorry but you cannot delete this recipe. You can only delete recipes you created.</strong>
 {% endif %}
