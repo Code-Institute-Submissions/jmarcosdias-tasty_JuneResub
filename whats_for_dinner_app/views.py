@@ -1,8 +1,10 @@
-from django.shortcuts import render, get_object_or_404, redirect, HttpResponseRedirect
+from django.shortcuts import render, get_object_or_404, redirect
 from django.views import generic, View
 from django.template.defaultfilters import slugify
+from django.db import IntegrityError
 from .models import Recipe
 from .forms import RecipeForm, EditRecipeForm
+
 
 class RecipeList(generic.ListView):
     model = Recipe
@@ -10,43 +12,33 @@ class RecipeList(generic.ListView):
     template_name = "index.html"
     paginate_by = 6
 
+
 class RecipeView(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
-        # says wether the logged-in user is the owner of this recipe
-        if recipe.author == self.request.user:
-            owner = True
-        else:
-            owner = False
-        
+
         return render(
             request,
             "recipe.html",
             {
-                "recipe": recipe,
-                "owner": owner
+                "recipe": recipe
             },
         )
+
 
 class DeleteRecipeView(View):
 
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
-        # says wether the logged-in user is the owner of this recipe
-        if recipe.author == self.request.user:
-            owner = True
-        else:
-            owner = False
-        
+
         return render(
             request,
             "delete_recipe.html",
             {
-                "recipe": recipe,
-                "owner": owner
+                "recipe": recipe
             },
         )
 
@@ -54,7 +46,7 @@ class DeleteRecipeView(View):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
         recipe.delete()
-        return redirect('home');
+        return redirect('home')
 
 
 class CreateRecipeView(View):
@@ -82,18 +74,6 @@ class CreateRecipeView(View):
             request,
             "create_recipe.html",
         )
-        # print("post recipe")
-        # title = request.POST.get('title')
-        # short_description = request.POST.get('short_description')
-        # ingredients = request.POST.get('ingredients')
-        # method = request.POST.get('method')
-        # Recipe.objects.create(title=title, author=request.user,
-        #   short_description=short_description, ingredients=ingredients, method=method)
-        # print("title = " + title)
-        # form = RecipeForm(request.POST)
-        # if form.is_valid():
-        # form.save()
-        # return redirect('home')
 
 
 class EditRecipeView(View):
@@ -101,18 +81,11 @@ class EditRecipeView(View):
     def get(self, request, slug, *args, **kwargs):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
-        # says wether the logged-in user is the owner of this recipe
-        if recipe.author == self.request.user:
-            owner = True
-        else:
-            owner = False
-        
         return render(
             request,
             "edit_recipe.html",
             {
                 "recipe": recipe,
-                "owner": owner
             },
         )
 
@@ -120,15 +93,33 @@ class EditRecipeView(View):
         queryset = Recipe.objects.order_by('title')
         recipe = get_object_or_404(queryset, slug=slug)
         recipe.title = request.POST['title']
+        recipe.slug = slugify(recipe.title)
         recipe.short_description = request.POST['short_description']
         recipe.ingredients = request.POST['ingredients']
         recipe.method = request.POST['method']
-        recipe.save()
+        try:
+            recipe.save()
+        except IntegrityError:
+            message_to_user = "There is another recipe with this same " \
+                + "title. Please try a different title."
+        except Exception:
+            message_to_user = "Something went wrong. Please try again."
+            return render(
+                request,
+                "edit_recipe.html",
+                {
+                    "recipe": recipe,
+                    "message_to_user": message_to_user,
+                },
+            )
+        else:
+            message_to_user = "Your recipe is saved."
+
         return render(
-          request,
-          "edit_recipe.html",
-          {
-            "recipe": recipe,
-            "message_to_user": "Saved",
-          },
+            request,
+            "edit_recipe.html",
+            {
+                "recipe": recipe,
+                "message_to_user": message_to_user
+            },
         )
