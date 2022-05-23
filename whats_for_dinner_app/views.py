@@ -122,6 +122,8 @@ class EditRecipeView(View):
         recipe.short_description = request.POST['short_description']
         recipe.ingredients = request.POST['ingredients']
         recipe.method = request.POST['method']
+        # Used by the view to allow or disallow the save button
+        btn_save_disallowed = False
 
         if not recipe.slug:
             message_to_user = "Please provide a title for your recipe."
@@ -135,12 +137,14 @@ class EditRecipeView(View):
                 message_to_user = "Something went wrong. Please try again."
             else:
                 message_to_user = "Your recipe is saved."
+                btn_save_disallowed = True
 
         return render(
             request,
             "edit_recipe.html",
             {
                 "recipe": recipe,
-                "message_to_user": message_to_user
+                "message_to_user": message_to_user,
+                "btn_save_disallowed": btn_save_disallowed
             },
         )
