@@ -61,19 +61,44 @@ class CreateRecipeView(View):
         )
 
     def post(self, request, *args, **kwargs):
-        recipe_form = RecipeForm(data=request.POST)
-        if recipe_form.is_valid():
-            recipe = recipe_form.save(commit=False)
-            recipe.author = request.user
-            recipe.slug = slugify(recipe.title)
-            recipe.save()
+        recipe = Recipe()
+        recipe.title = request.POST['title']
+        recipe.slug = slugify(recipe.title)
+        recipe.short_description = request.POST['short_description']
+        recipe.ingredients = request.POST['ingredients']
+        recipe.method = request.POST['method']
+        # Used by the view to allow or disallow the create button
+        btn_create_disallowed = False
+
+        if not recipe.slug:
+            message_to_user = "Please provide a title for your recipe."
         else:
-            recipe_form = RecipeForm()
+            recipe_form = RecipeForm(data=request.POST)
+            if recipe_form.is_valid():
+                recipe.author = request.user
+                try:
+                    recipe.save()
+                except IntegrityError:
+                    message_to_user = "There is another recipe with this " \
+                        + "same title. Please try a different title."
+                except Exception:
+                    message_to_user = "Something went wrong. Please try again."
+                else:
+                    message_to_user = "Your recipe is saved."
+                    btn_create_disallowed = True
+            else:
+                message_to_user = "Something went wrong. Please try again."
 
         return render(
             request,
             "create_recipe.html",
+            {
+                "recipe": recipe,
+                "message_to_user": message_to_user,
+                "btn_create_disallowed": btn_create_disallowed
+            },
         )
+
 
 
 class EditRecipeView(View):
