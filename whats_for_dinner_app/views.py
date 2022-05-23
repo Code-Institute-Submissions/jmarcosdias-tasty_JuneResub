@@ -97,23 +97,19 @@ class EditRecipeView(View):
         recipe.short_description = request.POST['short_description']
         recipe.ingredients = request.POST['ingredients']
         recipe.method = request.POST['method']
-        try:
-            recipe.save()
-        except IntegrityError:
-            message_to_user = "There is another recipe with this same " \
-                + "title. Please try a different title."
-        except Exception:
-            message_to_user = "Something went wrong. Please try again."
-            return render(
-                request,
-                "edit_recipe.html",
-                {
-                    "recipe": recipe,
-                    "message_to_user": message_to_user,
-                },
-            )
+
+        if not recipe.slug:
+            message_to_user = "Please provide a title for your recipe."
         else:
-            message_to_user = "Your recipe is saved."
+            try:
+                recipe.save()
+            except IntegrityError:
+                message_to_user = "There is another recipe with this same " \
+                    + "title. Please try a different title."
+            except Exception:
+                message_to_user = "Something went wrong. Please try again."
+            else:
+                message_to_user = "Your recipe is saved."
 
         return render(
             request,
