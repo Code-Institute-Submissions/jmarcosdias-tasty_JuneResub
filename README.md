@@ -148,13 +148,21 @@ Mon May 23 20:49:00 2022 +0100
 
 At this stage, the application is working.
 
-There is some time before the delivery day. This way new tasks were indentified and placed into the Kanban board.
+There was only one user story in the to do column of the Kanban board so it was moved to the in progress column.
 
-#### TASK: Improve automated tests
-Automated tests were developed for view recipe list and view recipe but there are no automated tests for create, edit and delete recipe. The automated tests must be reviewed in order to cover at least the CRUD functionalities.
+**USER STORY: Welcome page**
 
-#### TASK: Improve appearance of the landing page 
+It was decided to implement the welcome page in the view recipe list page. This way a new user and a returning user will have access to a quick explanation about the website each time they visit it. This user story consists in updating the view recipe list with a welcome explanation.
+
+There is some time before the delivery day. This way the following new tasks were indentified and placed into the Kanban board.
+
+**TASK: Improve appearance of the landing page**
+
 Landing page is working but not yet looking good. Some elements are very close together and this makes the website look unfinished. Some design work is needed in the landing page and then new similar tasks will be created for the remaining pages.
+
+**TASK: Improve automated tests**
+
+Automated tests were developed for view recipe list and view recipe but there are no automated tests for create, edit and delete recipe. The automated tests must be reviewed in order to cover at least the CRUD functionalities.
 
 ![image](https://user-images.githubusercontent.com/87392921/169899937-1304d0f8-3994-48e8-aa0b-d73944d69fe4.png)
 
