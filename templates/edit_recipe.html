@@ -1,4 +1,4 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base_home.html' %} {% block content %}
 
 {% if user.is_authenticated and user == recipe.author %}
   {% if message_to_user %}

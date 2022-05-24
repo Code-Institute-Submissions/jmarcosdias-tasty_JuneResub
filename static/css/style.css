@@ -1,7 +1,17 @@
-.recipe-link {
-    text-decoration: none;
+body {
+    color:green;
 }
 
-.recipe-link:hover {
+.recipe-link, .nav-link, a {
+    text-decoration: none;
+    color: green;
+}
+
+.recipe-link:hover, .nav-link:hover, a:hover {
     color: orange;
+}
+
+.highlighted {
+    border: 0.1rem solid orange
+    /* border-color: orange */
 }

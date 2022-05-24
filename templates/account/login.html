@@ -6,6 +6,35 @@
 
 {% block content %}
 
+  <!-- Navigation -->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="mt-4">
+        <nav>
+              <div>
+                  <ul class="nav nav-tabs">
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'home' %}">Home</a>
+                      </li>
+                      {% if user.is_authenticated %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                      </li>
+                      {% else %}
+                      <li class="nav-item">
+                          <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link active" aria-current="page" href="{% url 'account_login' %}">Login</a>
+                      </li>
+                      {% endif %}
+                  </ul>
+              </div>
+        </nav>
+      </div>  
+    </div>
+  </div>
+
 <h1>{% trans "Sign In" %}</h1>
 
 <p>{% blocktrans %}If you have not created an account yet, then please
