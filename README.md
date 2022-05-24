@@ -58,6 +58,8 @@ Together, the wireframes below were a great starting point for the development o
 
 For a better user experience, the create account user story is implemented with a Username field instead of the initially wireframed First Name and Last Name fields. This makes the registration process smoother and more likely to register a larger number of users.
 
+The text here presented in the create account wireframe was moved to the view recipe list page which was also decided to be the the landing page. This decision was taken at a final stage of the project. The wireframes here presented helped a lot to kick off the development but this does not mean things cannot change.
+
 #### View recipe list
 
 ![image](https://user-images.githubusercontent.com/87392921/168376267-d1926b42-ba3a-4613-ab98-d75a4848698f.png)
