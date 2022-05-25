@@ -167,9 +167,9 @@ Automated tests were developed for view recipe list and view recipe but there ar
 Mon May 23 21:32:50 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169899937-1304d0f8-3994-48e8-aa0b-d73944d69fe4.png)
 
-### Improve the appearance of the landpage is done
+### Changes to the landing page contents and appearance done
 
-The landpage is now with the intended design for this version of the project, to be delivered on 28th of May.
+The landpage is now with the intended design and content for this version of the project, to be delivered on 28th of May.
 
 New tasks were created to style each of the remaining pages.
 
