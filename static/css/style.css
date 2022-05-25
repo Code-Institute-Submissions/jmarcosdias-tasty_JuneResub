@@ -1,10 +1,10 @@
 body {
-    color:green;
+    color:forestgreen; 
 }
 
 .recipe-link, .nav-link, a {
     text-decoration: none;
-    color: green;
+    color: forestgreen;
 }
 
 .recipe-link:hover, .nav-link:hover, a:hover {
@@ -13,4 +13,8 @@ body {
 
 .highlighted {
     border: 0.1rem solid orange
+}
+
+body {
+    background-color:aliceblue
 }
