@@ -185,6 +185,11 @@ Tasks updated and repositioned accordingly. The focus now is on styling the main
 Wed May 25 21:25:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170360558-e4c97f7b-5eec-4edc-a36c-67e469946588.png)
 
+### Landing page, recipe list and create recipe are styled
+
+Wed May 26 00:27:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170385433-fc2750c2-0524-4beb-aaf8-24334cfebd6a.png)
+
 ## Testing
 
 ### Validator tests
