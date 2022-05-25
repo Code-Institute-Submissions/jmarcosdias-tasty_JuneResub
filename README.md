@@ -141,7 +141,7 @@ Sun May 22 11:14:15 2022 +0100
 
 ### Create, edit and delete recipe user stories done
 
-Mon May 23 20:49:00 2022 +0100
+Mon May 23 20:54:13 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169895704-81e96644-0103-480f-92f7-35666739a9cb.png)
 
 ### Create tasks for improving automated tests and for a better design of the landing page
@@ -164,7 +164,20 @@ Landing page is working but not yet looking good. Some elements are very close t
 
 Automated tests were developed for view recipe list and view recipe but there are no automated tests for create, edit and delete recipe. The automated tests must be reviewed in order to cover at least the CRUD functionalities.
 
+Mon May 23 21:32:50 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/169899937-1304d0f8-3994-48e8-aa0b-d73944d69fe4.png)
+
+### Improve the appearance of the landpage is done
+
+The landpage is now with the intended design for this version of the project, to be delivered on 28th of May.
+
+New tasks were created to style each of the remaining pages.
+
+The automated tests task was moved back to the to do column. The tasks in the to do column are now being prioritized.
+
+Wed May 25 02:35:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170159595-2bb948af-df14-485a-b00c-b4e073f851af.png)
+
 
 ## Testing
 
