@@ -178,6 +178,12 @@ The automated tests task was moved back to the to do column. The tasks in the to
 Wed May 25 02:35:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170159595-2bb948af-df14-485a-b00c-b4e073f851af.png)
 
+### Styling the main pages
+
+Tasks updated and repositioned accordingly. The focus now is on styling the main pages of the project.
+
+Wed May 25 21:25:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170360558-e4c97f7b-5eec-4edc-a36c-67e469946588.png)
 
 ## Testing
 
