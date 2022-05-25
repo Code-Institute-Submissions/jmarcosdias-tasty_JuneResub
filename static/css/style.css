@@ -32,3 +32,16 @@ body {
     background-color:lightcyan
 }
 
+.btn-primary {
+    --bs-btn-color: lightcyan;
+    --bs-btn-bg: deepskyblue;
+    --bs-btn-border-color: deepskyblue;
+    --bs-btn-hover-color: lightcyan;
+    --bs-btn-hover-bg: deepskyblue;
+    --bs-btn-hover-border-color: orange;
+    --bs-btn-focus-shadow-rgb: 255,165,0;
+    --bs-btn-active-color: lightcyan;
+    --bs-btn-active-bg: deepskyblue;
+    --bs-btn-active-border-color: deepskyblue;
+    border: 0.2rem solid
+}
