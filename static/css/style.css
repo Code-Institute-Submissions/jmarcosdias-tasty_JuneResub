@@ -2,6 +2,15 @@ body {
     color:maroon; 
 }
 
+h1 {
+    color: deepskyblue;
+}
+
+strong {
+    color: red;
+    /* font-weight: bold; */
+}
+
 .recipe-link, .nav-link, a {
     text-decoration: none;
     color: maroon;
