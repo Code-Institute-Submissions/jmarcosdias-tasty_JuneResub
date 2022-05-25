@@ -1,20 +1,33 @@
 body {
-    color:forestgreen; 
+    color:maroon; 
 }
 
 .recipe-link, .nav-link, a {
     text-decoration: none;
-    color: forestgreen;
+    color: maroon;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-link-active-color:coral;
+}
+
+.active {
+    font-weight: bold;
 }
 
 .recipe-link:hover, .nav-link:hover, a:hover {
-    color: orange;
+    color: coral;
 }
 
-.highlighted {
-    border: 0.1rem solid orange
+.highlighted-1 {
+    border: 0.2rem solid orange
+}
+
+.highlighted-2 {
+    border: 0.4rem double coral
 }
 
 body {
     background-color:aliceblue
 }
+

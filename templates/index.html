@@ -6,12 +6,14 @@
     <div class="container-fluid">
       <div class="row">
         <div class="mt-4">
-          <div class="p-2 bg-light highlighted">
-            <div><p><strong>Not sure what to cook for dinner tonight?</strong></p></div>
-            <div><p>This is not a problem anymore. Just browse our list of recipes, shared by people like you, and pick up one for you to cook.</p></div>
-            <div><p>You can also share your favorite recipes with the entire world!</p></div>
+          <div class="card mt-4 highlighted-2">
+            <div class="card-body">
+              <h4 class="card-title">Not sure what to cook for dinner tonight?</h4>
+              <p class="card-text">This is not a problem anymore. Just browse our list of recipes, shared by people like you, and pick up one for you to cook.</p>
+              <p class="card-text">You can also share your favorite recipes with us!</p>
+            </div>
           </div>
-        </div>  
+        </div>
       </div>
     </div>
     {% endif %}
@@ -29,7 +31,7 @@
         {% for recipe in recipe_list %}
           <div class="col-xs-12 col-sm-4">
             <a href="{% url 'recipe' recipe.slug  %}" class="recipe-link">
-              <div class="card mt-4 highlighted">
+              <div class="card mt-4 highlighted-1">
                 <div class="card-header">
                   <h5 class="card-title">{{ recipe.title }}</h5>
                 </div>
