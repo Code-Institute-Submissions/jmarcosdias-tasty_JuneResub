@@ -13,6 +13,7 @@ body {
 
 .active {
     font-weight: bold;
+    color: coral;
 }
 
 .recipe-link:hover, .nav-link:hover, a:hover {
@@ -28,6 +29,6 @@ body {
 }
 
 body {
-    background-color:aliceblue
+    background-color:lightcyan
 }
 
