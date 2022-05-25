@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col"><h1>{{ recipe.title }}</h1></div>
   </div>
@@ -21,6 +21,42 @@
     <div class="col">
       <h2>Method</h2>
       <p>{% autoescape off %}{{ recipe.method }}{% endautoescape %}</p>
+    </div>
+  </div>
+</div> -->
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="mt-4">
+      <h1>{{ recipe.title }}</h1>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="mt-4">
+        <div class="row">
+          <div class="col">
+            <label for="id_short_description">Short Description</label>
+            <textarea readonly type="text" class="form-control" id="id_short_description" name="short_description" rows="3">{{ recipe.short_description }}</textarea>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col-sm-4">
+            <label for="id_ingredients">Ingredients</label>
+            <textarea readonly type="text" class="form-control" id="id_ingredients" name="ingredients" rows="6">{{ recipe.ingredients }}</textarea>
+          </div>
+          <div class="col-sm-8 mt-4 mt-sm-0">
+            <label for="id_method">Method</label>
+            <textarea readonly type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
+          </div>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Back to Recipe List</button></a>
+          </div>
+        </div>
     </div>
   </div>
 </div>

@@ -54,3 +54,7 @@ body {
     --bs-btn-active-border-color: deepskyblue;
     border: 0.2rem solid
 }
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #fff;
+}
