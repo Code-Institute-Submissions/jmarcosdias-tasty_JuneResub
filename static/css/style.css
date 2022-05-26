@@ -1,19 +1,30 @@
+
+/* Body */
 body {
-    color:maroon; 
+    background-image: url("https://res.cloudinary.com/marcos-dias/image/upload/v1653595422/whats-for-dinner-background_dairtr.jpg");
+    background-color:orangered;
 }
 
+/* Headings */
 h1 {
     color: deepskyblue;
+    text-shadow: 0.15rem 0.15rem cornsilk;
 }
 
+/* Message to the user */
 strong {
     color: red;
-    /* font-weight: bold; */
+    background-color: cornsilk;
 }
 
-.recipe-link, .nav-link, a {
+.nav-link {
     text-decoration: none;
-    color: maroon;
+    color:cornsilk;
+}
+
+.recipe-link, a {
+    text-decoration: none;
+    color:maroon;
 }
 
 .nav-tabs {
@@ -37,22 +48,27 @@ strong {
     border: 0.4rem double coral
 }
 
-body {
-    background-color:lightcyan
+.card-type-1 {
+    opacity: 0.8;
 }
 
 .btn-primary {
-    --bs-btn-color: lightcyan;
+    --bs-btn-color: cornsilk;
     --bs-btn-bg: deepskyblue;
     --bs-btn-border-color: deepskyblue;
-    --bs-btn-hover-color: lightcyan;
-    --bs-btn-hover-bg: deepskyblue;
-    --bs-btn-hover-border-color: orange;
-    --bs-btn-focus-shadow-rgb: 255,165,0;
-    --bs-btn-active-color: lightcyan;
+    --bs-btn-hover-color: cornsilk;
+    --bs-btn-hover-bg:dodgerblue;
+    --bs-btn-hover-border-color: dodgerblue;
+    --bs-btn-focus-shadow-rgb: "";
+    --bs-btn-active-color: cornsilk;
     --bs-btn-active-bg: deepskyblue;
     --bs-btn-active-border-color: deepskyblue;
-    border: 0.2rem solid
+    border: 0.2rem solid deepskyblue;
+}
+
+.button:active {
+    border-left-style: solid;
+    border-top-style: solid;
 }
 
 .form-control:disabled, .form-control[readonly] {
