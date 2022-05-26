@@ -189,6 +189,8 @@ Wed May 25 21:25:00 2022 +0100
 
 ### Landing page, recipe list and create recipe are styled
 
+New done column was created in the Kanban board so that it is possible to see all the done user stories and tasks in one screenshot.
+
 Wed May 26 00:27:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170385433-fc2750c2-0524-4beb-aaf8-24334cfebd6a.png)
 
