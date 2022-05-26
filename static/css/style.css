@@ -1,4 +1,3 @@
-
 /* Body */
 body {
     background-image: url("https://res.cloudinary.com/marcos-dias/image/upload/v1653595422/whats-for-dinner-background_dairtr.jpg");
@@ -7,8 +6,7 @@ body {
 
 /* Headings */
 h1 {
-    color: deepskyblue;
-    text-shadow: 0.2rem 0.2rem 0.4rem #000000;
+    color: limegreen;
 }
 
 /* Message to the user */
@@ -17,14 +15,11 @@ strong {
     background-color: cornsilk;
 }
 
+/* ******************** Navigation ******************** */
+
 .nav-link {
     text-decoration: none;
     color:cornsilk;
-}
-
-.recipe-link, a {
-    text-decoration: none;
-    color:maroon;
 }
 
 .nav-tabs {
@@ -36,8 +31,20 @@ strong {
     color: coral;
 }
 
+/* Other links */
+.recipe-link, a {
+    text-decoration: none;
+    color:maroon;
+}
+
 .recipe-link:hover, .nav-link:hover, a:hover {
     color: coral;
+}
+
+/* ********************** Cards *********************** */
+
+.card-type-1 {
+    opacity: 0.9;
 }
 
 .highlighted-1 {
@@ -46,31 +53,31 @@ strong {
 }
 
 .highlighted-2 {
-    border: 0.4rem double coral
+    border: 0.4rem solid orange;
 }
 
-.card-type-1 {
-    opacity: 0.9;
-}
+/* ********************* Buttons ********************** */
 
 .btn-primary {
     --bs-btn-color: cornsilk;
-    --bs-btn-bg: deepskyblue;
-    --bs-btn-border-color: deepskyblue;
+    --bs-btn-bg: tomato;
+    --bs-btn-border-color: tomato;
     --bs-btn-hover-color: cornsilk;
-    --bs-btn-hover-bg:dodgerblue;
-    --bs-btn-hover-border-color: dodgerblue;
+    --bs-btn-hover-bg:red;
+    --bs-btn-hover-border-color: red;
     --bs-btn-focus-shadow-rgb: "";
     --bs-btn-active-color: cornsilk;
-    --bs-btn-active-bg: deepskyblue;
-    --bs-btn-active-border-color: deepskyblue;
-    border: 0.2rem solid deepskyblue;
+    --bs-btn-active-bg: tomato;
+    --bs-btn-active-border-color: tomato;
+    border: 0.2rem solid tomato;
 }
 
 .button:active {
     border-left-style: solid;
     border-top-style: solid;
 }
+
+/* *****************&**** Forms *****************&***** */
 
 .form-control:disabled, .form-control[readonly] {
     background-color: #fff;

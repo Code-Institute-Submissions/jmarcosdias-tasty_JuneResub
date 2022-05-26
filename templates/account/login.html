@@ -35,18 +35,54 @@
     </div>
   </div>
 
-<h1>{% trans "Sign In" %}</h1>
+<div class="container-fluid">
+  <div class="row">
+    <div class="mt-4">
+      <h1>Sign In</h1>
+    </div>
+  </div>
+</div>
 
-<p>{% blocktrans %}If you have not created an account yet, then please
-<a href="{{ signup_url }}">sign up</a> first.{% endblocktrans %}</p>
+<div class="container-fluid mt-4">
+  <div class="card card-type-1">
 
-<form class="login" method="POST" action="{% url 'account_login' %}">
-  {% csrf_token %}
-  {{ form.as_p }}
-  {% if redirect_field_value %}
-  <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-  {% endif %}
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
-</form>
+    <div class="row mt-4">
+      <div class="column">
+        <p class="mx-3">If you have not created an account yet, then please <a href="{{ signup_url }}">sign up</a> first.</p>
+      </div>
+    </div>
+
+    <form class="login" method="POST" action="{% url 'account_login' %}">
+      {% csrf_token %}
+
+      <div class="row mt-4">
+        <div class="col mx-3">
+          <label for="id_login">Username</label>
+          <input class="form-control" type="text" name="login" autocomplete="username" maxlength="150" required id="id_login">
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col mx-3">
+          <label for="id_password">Password</label> 
+          <input class="form-control" type="password" name="password" autocomplete="current-password" required id="id_password">
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col mx-3">
+          <label for="id_remember">Remember Me</label>
+          <p><input type="checkbox" name="remember" id="id_remember"></p>
+        </div>
+      </div>
+
+      <div class="row my-4">
+        <div class="col mx-3">
+          <button class="btn btn-primary" type="submit">Sign In</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div> 
 
 {% endblock %}
