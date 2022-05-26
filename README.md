@@ -180,15 +180,32 @@ Wed May 25 02:35:00 2022 +0100
 
 ### Styling the main pages
 
-Tasks updated and repositioned accordingly. The focus now is on styling the main pages of the project.
+Tasks updated and repositioned accordingly to the current need. One task was renamed to follow the naming convention of others (task #10). One task was created (task #16).
+
+The focus now is on styling the main pages of the project.
 
 Wed May 25 21:25:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170360558-e4c97f7b-5eec-4edc-a36c-67e469946588.png)
 
 ### Landing page, recipe list and create recipe are styled
 
+New done column was created in the Kanban board so that it is possible to see all the done user stories and tasks in one screenshot.
+
 Wed May 26 00:27:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170385433-fc2750c2-0524-4beb-aaf8-24334cfebd6a.png)
+
+### View and edit recipe pages are styled
+
+Wed May 26 01:42:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170392040-e75f599e-de9b-4a1c-b5c3-f633c38424e9.png)
+
+### Styling the login, logout and register pages
+
+Tasks updated and repositioned accordingly to the current need. One task was created (task #17).
+The focus now is on styling the authentication-related pages.
+
+Wed May 26 12:52:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170482563-bb187a72-c8b2-4933-ad65-47c67a7d52f6.png)
 
 ## Testing
 
