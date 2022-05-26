@@ -47,20 +47,23 @@
               <label for="id_method">Method</label>
               <textarea type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
             </div>
-            <div class="col-sm-2 mt-4">
-              {% csrf_token %}
-              {% if not btn_create_disallowed %}
-                <button type="submit" class="btn btn-primary">Create</button>
-              {% else %}
+            <div class="col-sm-2 mt-4">              
                 <div class="row">
+                  {% if not btn_create_disallowed %}
+                  {% csrf_token %}
                   <div class="col">
-                    <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Recipe List</button></a>
+                    <button type="submit" class="btn btn-primary">Create Your Recipe</button>
                   </div>
+                  {% endif %}
+                  <div class="col">
+                    <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Back to Recipe List</button></a>
+                  </div>
+                  {% if btn_create_disallowed %}
                   <div class="col">
                     <a href="{% url 'recipe' recipe.slug  %}"><button type="button" class="btn btn-primary">This Recipe</button></a>    
                   </div>
+                  {% endif %}
                 </div>
-              {% endif %}
             </div>
           </div>
         </form>
