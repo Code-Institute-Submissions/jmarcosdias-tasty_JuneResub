@@ -190,6 +190,11 @@ Wed May 25 21:25:00 2022 +0100
 Wed May 26 00:27:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170385433-fc2750c2-0524-4beb-aaf8-24334cfebd6a.png)
 
+### View and edit recipe pages are styled
+
+Wed May 26 01:42:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170392040-e75f599e-de9b-4a1c-b5c3-f633c38424e9.png)
+
 ## Testing
 
 ### Validator tests
