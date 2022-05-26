@@ -2,13 +2,13 @@
 /* Body */
 body {
     background-image: url("https://res.cloudinary.com/marcos-dias/image/upload/v1653595422/whats-for-dinner-background_dairtr.jpg");
-    background-color:orangered;
+    background-color:orange;
 }
 
 /* Headings */
 h1 {
     color: deepskyblue;
-    text-shadow: 0.15rem 0.15rem cornsilk;
+    text-shadow: 0.2rem 0.2rem 0.4rem #000000;
 }
 
 /* Message to the user */

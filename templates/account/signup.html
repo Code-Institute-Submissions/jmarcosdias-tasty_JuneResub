@@ -63,24 +63,19 @@
 
         <div class="row mt-3">
           <div class="col mx-3">
-            <label for="id_password1">Password:</label>
+            <label for="id_password1">Password</label>
             <input type="password" class="form-control" id="id_password1" name="password1" autocomplete="new-password" required>
           </div>
         </div>
 
         <div class="row mt-3">
           <div class="col mx-3">
-            <label for="id_password1">Password:</label>
+            <label for="id_password1">Re-enter password</label>
             <input type="password" class="form-control" id="id_password2" name="password2" autocomplete="new-password" required>
           </div>
         </div>
 
-        {% if redirect_field_value %}
-        <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
-        {% endif %}
-        <!-- <button type="submit">{% trans "Sign Up" %} &raquo;</button> -->
-
-        <div class="row my-3">
+        <div class="row my-4">
           <div class="col mx-3">
             <a href="#"><button type="submit" class="btn btn-primary">Sign Up</button></a>    
           </div>
