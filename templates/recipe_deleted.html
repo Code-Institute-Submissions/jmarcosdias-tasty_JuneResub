@@ -1,3 +1,24 @@
 {% extends 'base_home.html' %} {% block content %}
-<strong>Recipe is deleted.</strong>
+
+<div class="container-fluid">
+    <div class="row">
+      <div class="mt-4">
+        <h1>Delete Recipe</h1>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid">
+    <div class="row">
+      <div class="mt-4">
+        <strong>Recipe is deleted.</strong>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col mt-4">
+        <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Back to Recipe List</button></a>  
+      </div>
+    </div>
+  </div>
+
 {% endblock content %}
