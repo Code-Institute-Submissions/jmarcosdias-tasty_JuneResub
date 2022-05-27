@@ -207,6 +207,13 @@ The focus now is on styling the authentication-related pages.
 Wed May 26 12:52:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170482563-bb187a72-c8b2-4933-ad65-47c67a7d52f6.png)
 
+### Final styling and automated tests
+
+Task #15 removed from the project. Task #11 renamed to style the view/edit/delete recipe pages. These pages are similar so they are better styled together.
+
+Wed May 27 12:07:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170687832-8e790011-dcbd-4c99-a620-62c5c45431ed.png)
+
 ## Testing
 
 ### Validator tests
