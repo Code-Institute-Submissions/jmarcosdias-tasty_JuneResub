@@ -3,7 +3,15 @@
 {% block content %}
 
 {% if not user.is_authenticated %}
-  <strong>Please create an account so that you can create a recipe.</strong>
+  <div class="container-fluid mt-4">
+    <div class="card card-type-1">
+      <div class="row mt-3">
+        <div class="column">
+          <p class="mx-3"><strong>Please create an account so that you can create a recipe.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
 {% else %}
   <div class="container-fluid">
     <div class="row">
@@ -15,7 +23,6 @@
 
   <div class="container-fluid mt-4">
     <div class="card card-type-1">
-      
       {% if message_to_user %}
       <div class="row mt-4">
         <div class="column">
@@ -23,57 +30,54 @@
         </div>
       </div>
       {% endif %}
-        <form method=post>
-          <div class="container-fluid">
-            <div class="row">
-              <div class="mt-4">
-                <form method=post>
-                  <div class="row">
-                    <div class="col">
-                      <label for="id_title">Title</label>
-                      <input type="text" class="form-control" id="id_title" name="title" value="{{ recipe.title }}"> 
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col">
-                      <label for="id_short_description">Short Description</label>
-                      <input type="text" class="form-control" id="id_short_description" name="short_description" value="{{ recipe.short_description }}"> 
-                    </div>
-                  </div>
-                  <div class="row mt-4">
-                    <div class="col-sm-4 mb-3">
-                      <label for="id_ingredients">Ingredients</label>
-                      <textarea type="text" class="form-control" id="id_ingredients" name="ingredients" rows="6">{{ recipe.ingredients }}</textarea>
-                    </div>
-                    <div class="col-sm-6 mt-4 mt-sm-0 mb-3">
-                      <label for="id_method">Method</label>
-                      <textarea type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
-                    </div>
-                    <div class="col-sm-2 mt-4 mb-3">              
-                        <div class="row">
-                          {% if not btn_create_disallowed %}
-                          {% csrf_token %}
-                          <div class="col">
-                            <button type="submit" class="btn btn-primary mb-3">Create Recipe</button>
-                          </div>
-                          {% endif %}
-                          <div class="col">
-                            <a href="{% url 'home' %}"><button type="button" class="btn btn-primary mb-3">Back to Recipe List</button></a>
-                          </div>
-                          {% if btn_create_disallowed %}
-                          <div class="col">
-                            <a href="{% url 'recipe' recipe.slug  %}"><button type="button" class="btn btn-primary mb-3">This Recipe</button></a>    
-                          </div>
-                          {% endif %}
-                        </div>
-                    </div>
-                  </div>
-                </form>
+      <div class="container-fluid">
+        <div class="row">
+          <div class="mt-4">
+            <form method=post>
+              <div class="row">
+                <div class="col">
+                  <label for="id_title">Title</label>
+                  <input type="text" class="form-control" id="id_title" name="title" value="{{ recipe.title }}"> 
+                </div>
               </div>
-            </div>
+              <div class="row mt-4">
+                <div class="col">
+                  <label for="id_short_description">Short Description</label>
+                  <input type="text" class="form-control" id="id_short_description" name="short_description" value="{{ recipe.short_description }}"> 
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col-sm-4 mb-3">
+                  <label for="id_ingredients">Ingredients</label>
+                  <textarea type="text" class="form-control" id="id_ingredients" name="ingredients" rows="6">{{ recipe.ingredients }}</textarea>
+                </div>
+                <div class="col-sm-6 mt-4 mt-sm-0 mb-3">
+                  <label for="id_method">Method</label>
+                  <textarea type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
+                </div>
+                <div class="col-sm-2 mt-4 mb-3">              
+                    <div class="row">
+                      {% if not btn_create_disallowed %}
+                      {% csrf_token %}
+                      <div class="col">
+                        <button type="submit" class="btn btn-primary mb-3">Create Recipe</button>
+                      </div>
+                      {% endif %}
+                      <div class="col">
+                        <a href="{% url 'home' %}"><button type="button" class="btn btn-primary mb-3">Back to Recipe List</button></a>
+                      </div>
+                      {% if btn_create_disallowed %}
+                      <div class="col">
+                        <a href="{% url 'recipe' recipe.slug  %}"><button type="button" class="btn btn-primary mb-3">This Recipe</button></a>    
+                      </div>
+                      {% endif %}
+                    </div>
+                </div>
+              </div>
+            </form>
           </div>
-
-        </form>
+        </div>
+      </div>
     </div>
   </div> 
 {% endif %}

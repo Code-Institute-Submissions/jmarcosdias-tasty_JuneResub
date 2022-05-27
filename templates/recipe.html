@@ -2,29 +2,6 @@
 
 {% block content %}
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col"><h1>{{ recipe.title }}</h1></div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <p>{% autoescape off %}{{ recipe.short_description }}{% endautoescape %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Ingredients</h2>
-      <p>{% autoescape off %}{{ recipe.ingredients }}{% endautoescape %}</p>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col">
-      <h2>Method</h2>
-      <p>{% autoescape off %}{{ recipe.method }}{% endautoescape %}</p>
-    </div>
-  </div>
-</div> -->
-
 <div class="container-fluid">
   <div class="row">
     <div class="mt-4">
@@ -33,32 +10,36 @@
   </div>
 </div>
 
-<div class="container-fluid">
-  <div class="row">
-    <div class="mt-4">
-        <div class="row">
-          <div class="col">
-            <label for="id_short_description">Short Description</label>
-            <textarea readonly type="text" class="form-control" id="id_short_description" name="short_description" rows="3">{{ recipe.short_description }}</textarea>
-          </div>
+<div class="container-fluid mt-4">
+  <div class="card highlighted-1">
+      <div class="container-fluid">
+        <div class="row mt-3">
+              <div class="row">
+                <div class="col">
+                  <label for="id_short_description">Short Description</label>
+                  <textarea readonly type="text" class="form-control" id="id_short_description" name="short_description" rows="3">{{ recipe.short_description }}</textarea>
+                </div>
+              </div>
+              <div class="row mt-3">
+                <div class="col-sm-4 mb-3">
+                  <label for="id_ingredients">Ingredients</label>
+                  <textarea type="text" class="form-control" id="id_ingredients" name="ingredients" rows="6">{{ recipe.ingredients }}</textarea>
+                </div>
+                <div class="col-sm-6 mt-4 mt-sm-0 mb-3">
+                  <label for="id_method">Method</label>
+                  <textarea type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
+                </div>
+                <div class="col-sm-2 mt-4 mb-3">              
+                    <div class="row">
+                      <div class="col">
+                        <a href="{% url 'home' %}"><button type="button" class="btn btn-right btn-primary mb-3">Back to Recipe List</button></a>
+                      </div>
+                    </div>
+                </div>
+              </div>
         </div>
-        <div class="row mt-4">
-          <div class="col-sm-4">
-            <label for="id_ingredients">Ingredients</label>
-            <textarea readonly type="text" class="form-control" id="id_ingredients" name="ingredients" rows="6">{{ recipe.ingredients }}</textarea>
-          </div>
-          <div class="col-sm-8 mt-4 mt-sm-0">
-            <label for="id_method">Method</label>
-            <textarea readonly type="text" class="form-control" id="id_method" name="method" rows="6">{{ recipe.method }}</textarea>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="col">
-            <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Back to Recipe List</button></a>
-          </div>
-        </div>
-    </div>
+      </div>
   </div>
-</div>
+</div> 
 
 {% endblock content %}
