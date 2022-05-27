@@ -57,10 +57,12 @@ strong {
 .highlighted-1 {
     border: 0.3rem solid orange;
     opacity: 0.9;
+    color: maroon;
 }
 
 .highlighted-2 {
     border: 0.4rem solid orange;
+    color: maroon;
 }
 
 /* ********************* Buttons ********************** */
