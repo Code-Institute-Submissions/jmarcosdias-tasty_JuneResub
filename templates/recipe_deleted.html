@@ -1,24 +1,26 @@
 {% extends 'base_home.html' %} {% block content %}
 
 <div class="container-fluid">
-    <div class="row">
-      <div class="mt-4">
-        <h1>Delete Recipe</h1>
-      </div>
+  <div class="row">
+    <div class="mt-4">
+      <h1>Delete Recipe</h1>
     </div>
   </div>
+</div>
 
-  <div class="container-fluid">
-    <div class="row">
-      <div class="mt-4">
-        <strong>Recipe is deleted.</strong>
+<div class="container-fluid mt-4">
+  <div class="card card-type-1">
+    <div class="row mt-3">
+      <div class="column">
+        <p class="mx-3"><strong>Recipe is deleted.</strong></p>
       </div>
     </div>
-    <div class="row">
-      <div class="col mt-4">
+    <div class="row my-3">
+      <div class="col mx-3">
         <a href="{% url 'home' %}"><button type="button" class="btn btn-primary">Back to Recipe List</button></a>  
       </div>
     </div>
   </div>
+</div>
 
 {% endblock content %}
