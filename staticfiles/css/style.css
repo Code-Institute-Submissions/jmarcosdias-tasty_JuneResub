@@ -1,0 +1,119 @@
+/* Body */
+body {
+    background-image: url("https://res.cloudinary.com/marcos-dias/image/upload/v1653595422/whats-for-dinner-background_dairtr.jpg");
+    background-color:orange;
+}
+
+/* Headings */
+h1 {
+    color: limegreen;
+    text-shadow: 0 0 0.5rem red;
+}
+
+/* Labels */
+label {
+    color: Maroon;
+    font-weight: bold;
+}
+
+/* ************** Landing page message  *************** */
+
+.call-for-action {
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.call-for-action:hover {
+    color: royalblue;
+}
+
+/* Message to the user */
+strong {
+    color: red;
+}
+
+/* ******************** Navigation ******************** */
+
+.nav-link {
+    text-decoration: none;
+    color:cornsilk;
+}
+
+.nav-tabs {
+    --bs-nav-tabs-link-active-color:coral;
+}
+
+.active {
+    font-weight: bold;
+    color: coral;
+}
+
+/* Other links */
+
+.recipe-link, a {
+    text-decoration: none;
+    color:maroon;
+}
+
+.recipe-link:hover, .nav-link:hover, a:hover {
+    color: coral;
+}
+
+/* ********************** Cards *********************** */
+
+.card-type-1 {
+    opacity: 0.9;
+}
+
+.highlighted-1 {
+    border: 0.3rem solid orange;
+    opacity: 0.9;
+    color: maroon;
+}
+
+.highlighted-2 {
+    border: 0.4rem solid orange;
+    color: maroon;
+}
+
+/* ********************* Buttons ********************** */
+
+.btn-primary {
+    --bs-btn-color: cornsilk;
+    --bs-btn-bg: tomato;
+    --bs-btn-border-color: tomato;
+    --bs-btn-hover-color: cornsilk;
+    --bs-btn-hover-bg:red;
+    --bs-btn-hover-border-color: red;
+    --bs-btn-focus-shadow-rgb: "";
+    --bs-btn-active-color: cornsilk;
+    --bs-btn-active-bg: tomato;
+    --bs-btn-active-border-color: tomato;
+    border: 0.2rem solid tomato;
+}
+
+.btn-right {
+    float: right;
+}
+
+.btn-left {
+    float: left;
+}
+
+.button:active {
+    border-left-style: solid;
+    border-top-style: solid;
+}
+
+/* ********************** Forms *********************** */
+
+.form-control:disabled, .form-control[readonly] {
+    background-color: #fff;
+}
+
+/* ********************* Footer *********************** */
+
+.copyright {
+    background-color: rgba(128, 0, 0, 0.3);
+}
