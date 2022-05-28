@@ -18,42 +18,54 @@
     <!-- To avoid get /favicon.ico error  -->
     <link rel="shortcut icon" href="#">
   </head>
+
+  <!-- Body -->
   <body>
-
-  <!-- Navigation -->
-  <div class="container-fluid">
-    <div class="row">
-      <div class="mt-4">
-        <nav>
-              <div>
-                  <ul class="nav nav-tabs">
-                      <li class="nav-item">
-                          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                      </li>
-                      {% if user.is_authenticated %}
-                      <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
-                      </li>
-                      {% else %}
-                      <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
-                      </li>
-                      <li class="nav-item">
-                          <a class="nav-link" href="{% url 'account_login' %}">Login</a>
-                      </li>
-                      {% endif %}
-                  </ul>
-              </div>
-        </nav>
-      </div>  
+    <!-- Navigation -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="mt-4">
+          <nav>
+                <div>
+                    <ul class="nav nav-tabs">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        {% if user.is_authenticated %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        </li>
+                        {% else %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        </li>
+                        {% endif %}
+                    </ul>
+                </div>
+          </nav>
+        </div>  
+      </div>
     </div>
-  </div>
 
-  <main>
-    {% block content %}
-    {% endblock content %}
-  </main>
-  <!-- Bootstrap JavaScript Bundle -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <!-- Main -->
+    <main>
+      {% block content %}
+      {% endblock content %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-white fixed-bottom">    
+      <!-- Copyright -->
+      <div class="text-center p-4 mt-4 copyright">
+        © 2022 
+        <a class="text-white" href="https://whats--for--dinner.herokuapp.com/">What's for Dinner?</a>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JavaScript Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
   </body>
 </html>

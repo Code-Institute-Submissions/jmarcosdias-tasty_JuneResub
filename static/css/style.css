@@ -94,8 +94,14 @@ strong {
     border-top-style: solid;
 }
 
-/* *****************&**** Forms *****************&***** */
+/* ********************** Forms *********************** */
 
 .form-control:disabled, .form-control[readonly] {
     background-color: #fff;
+}
+
+/* ********************* Footer *********************** */
+
+.copyright {
+    background-color: rgba(128, 0, 0, 0.3);
 }
