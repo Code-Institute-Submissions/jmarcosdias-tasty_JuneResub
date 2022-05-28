@@ -8,8 +8,9 @@
 4. [Initial setup](#initial-setup)
 5. [Project follow-up](#project-follow-up)
 6. [Testing](#testing)
-   1. [Validator tests](#validator-tests)
-   2. [Automated tests](#automated-tests)
+   1. [Manual tests](#manual-tests)
+   2. [Validator tests](#validator-tests)
+   3. [Automated tests](#automated-tests)
 
 ## Purpose
 
@@ -266,7 +267,7 @@ Wed May 27 12:07:00 2022 +0100
 
 ## Testing
 
-### Manual testing
+### Manual tests
 
 The following manual testing scenarios were defined and successfuly carried out along the development.
 
@@ -290,22 +291,21 @@ In different devices, including desktop and mobile devices, navigate for the ent
 
 In order to improve the readability and consistency of the Python code, I have used the http://pep8online.com code checker.
 
-![image](https://user-images.githubusercontent.com/87392921/169820413-28dc900d-6301-4a53-9154-58250be27b84.png)
+Files reviewd:
 
+- tasty_project/settings.py
+- tasty_project/urls.py
+- whats_for_dinner_app/admin.py
+- whats_for_dinner_app/apps.py
+- whats_for_dinner_app/forms.py
+- whats_for_dinner_app/models.py
+- whats_for_dinner_app/test_models.py
+- whats_for_dinner_app/test_views.py
+- whats_for_dinner_app/urls.py
 
 ### Automated tests
 
+The automated tests are developed in the test_models.py and test_views.py and the can be kicked off by the following command.
+
 python3 manage.py test --keepdb
-
-
-
-
-
-
-
-
-
-
-
-
 
