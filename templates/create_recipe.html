@@ -65,19 +65,19 @@
                 </div>
                 <div class="col-sm-2 mt-4 mb-3">
                     <div class="row">
+                      <div class="col">
+                        <a href="{% url 'home' %}"><button type="button" class="btn btn-primary mb-3">Back to Recipe List</button></a>
+                      </div>
                       {% if btn_create_disallowed %}
                       <div class="col mb-2">
-                        <a href="{% url 'recipe' recipe.slug  %}"><button type="button" class="btn btn-primary mb-3">This Recipe</button></a>    
+                        <a href="{% url 'recipe' recipe.slug  %}"><button type="button" class="btn btn-primary btn-right">This Recipe</button></a>    
                       </div>
                       {% else %}
                       {% csrf_token %}
                       <div class="col mb-2">
-                        <button type="submit" class="btn btn-primary">Create Recipe</button>
+                        <button type="submit" class="btn btn-primary btn-right">Create Recipe</button>
                       </div>
                       {% endif %}
-                      <div class="col">
-                        <a href="{% url 'home' %}"><button type="button" class="btn btn-primary btn-right">Back to Recipe List</button></a>
-                      </div>
                     </div>
                 </div>
               </div>
