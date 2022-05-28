@@ -90,7 +90,7 @@ class CreateRecipeView(View):
                 except Exception:
                     message_to_user = "Something went wrong. Please try again."
                 else:
-                    message_to_user = "Your recipe is saved."
+                    message_to_user = "Your recipe is created."
                     btn_create_disallowed = True
             else:
                 message_to_user = "Something went wrong. Please try again."
