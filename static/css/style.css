@@ -10,11 +10,23 @@ h1 {
     text-shadow: 0 0 0.5rem red;
 }
 
-/* Headings */
+/* Labels */
 
 label {
     color: Maroon;
     font-weight: bold;
+}
+
+/* ************** Landing page message  *************** */
+
+.call-for-action {
+    color: dodgerblue;
+    font-weight: bold;
+    font-size: 150%;
+}
+
+.call-for-action:hover {
+    color: royalblue;
 }
 
 /* Message to the user */
