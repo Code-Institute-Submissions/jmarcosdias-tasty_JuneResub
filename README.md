@@ -1,15 +1,65 @@
 # <em>What's for Dinner</em> website
 
-This project is about developing a recipe website.
-
 ## Table of Contents
 
-1. [Design](#design)
-2. [Initial setup](#initial-setup)
-3. [Project follow-up](#project-follow-up)
-4. [Testing](#testing)
+1. [Purpose](#purpose)
+2. [Features](#features)
+3. [Design](#design)
+4. [Initial setup](#initial-setup)
+5. [Project follow-up](#project-follow-up)
+6. [Testing](#testing)
    1. [Validator tests](#validator-tests)
    2. [Automated tests](#automated-tests)
+
+## Purpose
+
+The <em>What's for Dinner</em> web site invite people to share their favorite recipes to cook for dinner.
+
+## Features 
+
+### Existing Features
+
+- Welcome Page
+
+This is the website's landing page. 
+
+For on-logged-in users, it presents an explanation of the site and invites the users to register.
+
+For logged-in users, this page presents directly the recipe list.
+
+- Recipe List
+
+Presents a list of all recipes shared by the website users.
+
+- View Recipe
+
+Allows everyone to view each recipe that is in the website.
+
+- Authentication
+
+Includes registration, login and logout.
+
+- Edit Recipe
+
+Used to update a recipe. A recipe can only be updated by the user who created it.
+
+- Create Recipe
+
+Used to create a recipe. Only authenticated users can create a recipe.
+
+- Delete Recipe
+
+Used to delete a recipe. Only authenticated users can delete a recipe.
+
+### Features Left to Implement
+
+- Contents Review
+
+This feature's objective is to avoid people sharing innapropriate or badly formatted contents in the website. 
+
+A newly created recipe should automatically be included in a list to be reviewed and approved or rejected. 
+
+Only approved recipes will be shared with all the site users.
 
 ## Design
 
