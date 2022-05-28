@@ -23,7 +23,7 @@ The <em>What's for Dinner</em> web site invite people to share their favorite re
 
 This is the website's landing page. 
 
-For on-logged-in users, it presents an explanation of the site and invites the users to register.
+For non-logged-in users, it presents an explanation of the site and invites the users to register.
 
 For logged-in users, this page presents directly the recipe list.
 
@@ -265,6 +265,26 @@ Wed May 27 12:07:00 2022 +0100
 ![image](https://user-images.githubusercontent.com/87392921/170688929-e4c17be5-a291-4bcf-be82-12bd3c0e6160.png)
 
 ## Testing
+
+### Manual testing
+
+The following manual testing scenarios were defined and successfuly carried out along the development.
+
+#### Navigation on the entire site
+
+Navigate to each page, following the available links. Make this navigation works good.
+
+Navigate to not authorized pages, typing directly the url to delete recipe, edit recipe and create recipe. Make sure an appropriate message is displayed. This test must be done:
+1. With non-logged-in users trying to create, edit and delete recipe.
+2. With logged-in users that are not owner of a recipe, trying to edit and delete that recipe.
+
+#### Broken links
+
+Make sure all the links are good.
+
+#### Ease of Navigation
+
+In different devices, including desktop and mobile devices, navigate for the entire site and make sure your navigation is nice.
 
 ### Validator tests
 
