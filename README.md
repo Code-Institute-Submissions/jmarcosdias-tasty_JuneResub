@@ -11,6 +11,7 @@
    1. [Manual tests](#manual-tests)
    2. [Validator tests](#validator-tests)
    3. [Automated tests](#automated-tests)
+7. [Credits](#credits)
 
 ## Purpose
 
@@ -319,3 +320,12 @@ python3 manage.py test --keepdb
 
 A separate testing data base is used so that the data is not mixed up with the production data.
 
+## Credits
+
+### Background image
+
+- The following picture was taken from [Pixabay](https://pixabay.com). This picture is free for commercial and noncommercial use:
+   -  [https://pixabay.com/photos/kagyana-strapatsada-gdarta-2955466/](https://pixabay.com/photos/kagyana-strapatsada-gdarta-2955466/)
+
+ 
+    
