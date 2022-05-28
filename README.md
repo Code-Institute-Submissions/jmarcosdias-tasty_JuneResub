@@ -263,7 +263,15 @@ Wed May 26 12:52:00 2022 +0100
 Task #15 removed from the project. Task #11 renamed to style the view/edit/delete recipe pages. These pages are similar so they are better styled together.
 
 Wed May 27 12:07:00 2022 +0100
-![image](https://user-images.githubusercontent.com/87392921/170688929-e4c17be5-a291-4bcf-be82-12bd3c0e6160.png)
+![image](https://user-images.githubusercontent.com/87392921/170820426-33b75915-3228-4f88-8037-e1681e4cf6bd.png)
+
+### Project completed successfully
+
+Automated tests have been revised but there is still work to do in this area. This work has been postponed to the release 2 of the <em>What's for Dinner</em> website.
+
+Wed May 28 11:05:00 2022 +0100
+![image](https://user-images.githubusercontent.com/87392921/170820483-78fc785e-955b-4850-b51c-de3fb382a551.png)
+
 
 ## Testing
 
@@ -305,7 +313,9 @@ Files reviewd:
 
 ### Automated tests
 
-The automated tests are developed in the test_models.py and test_views.py and the can be kicked off by the following command.
+The automated tests are currently developed in the test_models.py and test_views.py and the can be kicked off by the following command.
 
 python3 manage.py test --keepdb
+
+A separate testing data base is used so that the data is not mixed up with the production data.
 
