@@ -14,7 +14,8 @@
    1. [Manual tests](#manual-tests)
    2. [Validator tests](#validator-tests)
    3. [Automated tests](#automated-tests)
-10. [Credits](#credits)
+10. [Deployment](#deployment)
+11. [Credits](#credits)
 
 ## Purpose
 
@@ -366,6 +367,12 @@ The automated tests are currently developed in the test_models.py and test_views
 python3 manage.py test --keepdb
 
 A separate testing data base is used so that the data is not mixed up with the production data.
+
+## Deployment
+
+The website is deployed to [heroku](https://heroku.com).
+
+Here is the link for the live site https://whats--for--dinner.herokuapp.com/
 
 ## Credits
 
