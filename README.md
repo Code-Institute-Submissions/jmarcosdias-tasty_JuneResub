@@ -5,13 +5,16 @@
 1. [Purpose](#purpose)
 2. [Features](#features)
 3. [Design](#design)
-4. [Initial setup](#initial-setup)
-5. [Project follow-up](#project-follow-up)
-6. [Testing](#testing)
+   1. [User Stories](#user-stories)
+   2. [Wireframes](#wireframes)
+   3. [Data Model](#data-model)
+7. [Initial setup](#initial-setup)
+8. [Project follow-up](#project-follow-up)
+9. [Testing](#testing)
    1. [Manual tests](#manual-tests)
    2. [Validator tests](#validator-tests)
    3. [Automated tests](#automated-tests)
-7. [Credits](#credits)
+10. [Credits](#credits)
 
 ## Purpose
 
@@ -121,6 +124,50 @@ The text here presented in the create account wireframe was moved to the view re
 
 ![image](https://user-images.githubusercontent.com/87392921/168366511-061497bd-3983-4409-b4f5-132a579446f0.png)
 ![image](https://user-images.githubusercontent.com/87392921/168367108-16854308-335c-4a3d-88d9-526afbd10c9b.png)
+
+### Data Model
+
+The data model of the <em>What's for Dinner</em> website is composed of the Recipe entity that references the User entity provided by the django framework.
+
+Here are the details of the Recipe entity.
+
+<table style="width:100%">
+  <tr>
+    <th>Key</th>
+    <th>Field Name</th>
+    <th>Type</th>
+  </tr>
+  <tr>
+    <td></td>
+    <td>slug (unique)</td>
+    <td>SlugField</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>title</td>
+    <td>CharField</td>
+  </tr>
+  <tr>
+    <td>ForeignKey</td>
+    <td>author</td>
+    <td>User model</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>short_description</td>
+    <td>TextField</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>ingredients</td>
+    <td>TextField</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>method</td>
+    <td>TextField</td>
+  </tr>
+</table>
 
 ## Initial setup
 
