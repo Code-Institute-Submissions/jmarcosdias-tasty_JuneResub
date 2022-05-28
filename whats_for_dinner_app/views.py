@@ -54,7 +54,6 @@ class RecipeDeleted(generic.ListView):
     template_name = "recipe_deleted.html"
 
 
-
 class CreateRecipeView(View):
 
     def get(self, request, *args, **kwargs):
@@ -104,7 +103,6 @@ class CreateRecipeView(View):
                 "btn_create_disallowed": btn_create_disallowed
             },
         )
-
 
 
 class EditRecipeView(View):
