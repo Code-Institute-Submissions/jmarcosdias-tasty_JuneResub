@@ -8,14 +8,17 @@
    1. [User Stories](#user-stories)
    2. [Wireframes](#wireframes)
    3. [Data Model](#data-model)
-7. [Initial setup](#initial-setup)
-8. [Project follow-up](#project-follow-up)
-9. [Testing](#testing)
+4. [Initial setup](#initial-setup)
+5. [Project follow-up](#project-follow-up)
+6. [Testing](#testing)
    1. [Manual tests](#manual-tests)
    2. [Validator tests](#validator-tests)
    3. [Automated tests](#automated-tests)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
+7. [Deployment](#deployment)
+   1. [How to deploy the site to heroku](#how-to-deploy-the-site-to-heroku)
+   2. [How to deploy the site locally](#how-to-deploy-the-site-locally)
+8. [Credits](#credits)
+
 
 ## Purpose
 
@@ -373,6 +376,93 @@ A separate testing data base is used so that the data is not mixed up with the p
 The website is deployed to [heroku](https://heroku.com).
 
 Here is the link for the live site https://whats--for--dinner.herokuapp.com/
+
+### How to deploy the site to heroku
+
+1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
+
+### How to deploy the site locally
+
+1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
+
+2. Install the django framework and the gunicorn http server
+
+   pip3 install 'django<4' gunicorn
+
+3. Install the dj_database_url library and the psycopg2 database adapter
+
+   pip3 install dj_database_url psycopg2
+
+4. Install libraries to run cloudinary
+
+   pip3 install dj3-cloudinary-storage
+
+5. Install the summer note WYSIWYG editor
+
+   pip3 install django-summernote
+
+6. Install django-allauth package
+   
+   pip3 install django-allauth
+
+7. Install the witenoise package
+
+   pip install whitenoise
+
+8. Create a new file, named env.py, on the top level directory
+
+9. Add the following three lines to the env.py file. 
+
+   ```
+   import os
+   os.environ["SECRET_KEY"] = "a secret key you define"
+   os.environ["CLOUDINARY_URL"] = "cloudinary://658724693665645:m6176WxJpqf2JKhLCRfdoZh1hOk@marcos-dias"
+   ```
+
+   You need to update the second line of env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
+
+10. If you want to use local databases in your local installation, do the following, then ignore the step 11 and go to step 12
+
+    1. In the settings.py file, comment the lines 114 to 126 and then add the following lines
+
+       ```
+       DATABASES = {
+         'default': {
+           'ENGINE': 'django.db.backends.sqlite3',
+           'NAME': BASE_DIR / 'db.sqlite3',
+           'TEST': {
+               'NAME': 'test_database',
+           }
+         }
+       }
+       ```  
+    
+    2. Run the migrations
+
+       python3 manage.py makemigrations
+
+       python3 manage.py migrate
+
+
+11. If you need to use in your local deploy, the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
+
+    ```
+    os.environ["DATABASE_URL"] = "postgres://ldykbbxlynpvbu:3c2dc3ad004f84b932b67e75e299a7c618a12607c2400e82a9397ca8d7902549@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/dd77cfpqto48el"
+    os.environ["HEROKU_POSTGRESQL_AMBER_URL"] = "postgres://nbtoigxrzzdxgp:412963f5cb52081534480a65d581c03688f38312187b7428f7f94b4913683c8e@ec2-176-34-211-0.eu-west-1.compute.amazonaws.com:5432/d1q601nu0ev5kr"
+    ```
+    Notes:
+    * Using this DATABASE_URL is dangerous. You may accidentaly delete production data. It would be better to use a local database as described in step 10.
+    * This DATABASE_URL is the main database.
+    * This HEROKU_POSTGRESQL_AMBER_URL is the database used by the automated tests.
+    
+
+12. Congratulations. The website is deployed.
+    
+    To run the automated tests:
+    python3 manage.py test --keepdb
+
+    To run the server:
+    python3 manage.py runserver
 
 ## Credits
 
