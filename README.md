@@ -379,11 +379,100 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
 
 ### How to deploy the site to heroku
 
+As this site is currently deployed to heroku https://whats--for--dinner.herokuapp.com/, the below instructions are detailing how to deploy the site to https://whats-for-dinner-new.herokuapp.com/. In other words, these instructions describe how to deploy this application to heroku, using the whats-for-dinner-new name for the heroku app. You can use any other available name at heroku, when deploying, in case the  whats-for-dinner-new name is not available at that time.
+
 1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
 
 2. In the GitPod workspace
 
-   1. Login to Heroku
+   1. Login to heroku
+      ```
+      heroku login -i
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455490-581e5017-b084-4f99-bd9c-3b942ca94b70.png)
+
+   2. Create heroku remote for a new app choosing Europe region
+      ```
+      heroku create -a whats-for-dinner-new --region eu
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455668-ddde103b-07f4-4a7f-81a6-0c99063ec07f.png)
+
+      You can then check by using the following command
+      ```
+      git remote -v
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455691-22f1b20e-5406-4cb5-8d98-52a9a39c0731.png)
+      
+   3. Use heroku config to set the CLOUDINARY_URL variable
+      ```
+      heroku config:set CLOUDINARY_URL=cloudinary://658724693665645:m6176WxJpqf2JKhLCRfdoZh1hOk@marcos-dias
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455813-57d8d591-cd57-46ee-a857-a30140008423.png)
+
+   4. Use heroku config to set the SECRET_KEY variable
+      ```
+      heroku config:set SECRET_KEY='your-secret-key'
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455872-a4239d88-9241-4318-a1d9-06e2e9f784ab.png)
+
+      You can use an online secret key generator to generate your secret key, for example https://django-secret-key-generator.netlify.app.
+      
+   5. Use heroku config to set disable collect static   
+      ```
+      heroku config:set DISABLE_COLLECTSTATIC=1
+      ```
+      
+   6. Update the settings.py file adding the URL of the application you are deploying
+   
+      1. Add 'whats-for-dinner-new.herokuapp.com' to the allowed hosts
+         ![image](https://user-images.githubusercontent.com/87392921/174455886-0a5a5c8e-ef8c-4701-b645-9f791a978b81.png)
+      
+      2. Commit your changes
+         ```
+         git add .
+         git commit -m "Update allowed hosts in settings.py file"
+         ```
+      
+   7. Push to heroku git repository
+      ```
+      git push heroku main
+      ```
+      
+   8. Use heroku config to unset disable collect static
+      ```
+      heroku config:unset DISABLE_COLLECTSTATIC
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174456112-0e885306-e787-438d-86c1-680f90145635.png)
+
+   9. Use heroku run to make migrations
+      ```
+      heroku run python3 manage.py makemigrations
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174456190-2f3fe4a6-fb81-48be-8a7c-b003fc83a78b.png)
+
+      
+   10. Use heroku run to migrate
+       ```
+       heroku run python3 manage.py migrate
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456204-534ca8f2-8a91-4b73-bf64-3c817ee10db3.png)
+
+       
+   11. Use heroku ```addons:create``` to create the database for automated tests
+       
+       ```
+       heroku addons:create heroku-postgresql --as=HEROKU_POSTGRESQL_AMBER
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456231-0754f991-d7c8-4b33-9531-2a629e77a93a.png)
+
+       
+   12. Use heroku run to run automated tests
+       ```
+       heroku run python3 manage.py test --keepdb
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456257-db071f6f-e726-4773-99e3-584165a70bb5.png)
+
+   13. Congratulations! Your application is deployed to https://whats-for-dinner-new.herokuapp.com/ 
 
 ### How to deploy the site locally
 
@@ -453,10 +542,13 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
        }
        ```  
     
-    2. Run the migrations
+    2. Make migrations and migrate
 
        ```
        python3 manage.py makemigrations
+       ```
+       
+       ```
        python3 manage.py migrate
        ```
 
@@ -473,14 +565,17 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
     * This DATABASE_URL is the main database.
     * This HEROKU_POSTGRESQL_AMBER_URL is the database used by the automated tests.
     
-
-12. Congratulations. The website is deployed.
-    
-    To run the automated tests:
+12. Run the automated tests
+    ```
     python3 manage.py test --keepdb
-
-    To run the server:
+    ```
+    
+14. Congratulations. The website is deployed locally
+    
+    To run the server locally:
+    ```
     python3 manage.py runserver
+    ```
 
 ## Credits
 
