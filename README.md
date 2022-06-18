@@ -381,33 +381,49 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
 
 1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
 
+2. In the GitPod workspace
+
+   1. Login to Heroku
+
 ### How to deploy the site locally
 
 1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
 
 2. Install the django framework and the gunicorn http server
 
+   ```
    pip3 install 'django<4' gunicorn
+   ```
 
 3. Install the dj_database_url library and the psycopg2 database adapter
 
+   ```
    pip3 install dj_database_url psycopg2
+   ```
 
 4. Install libraries to run cloudinary
 
+   ```
    pip3 install dj3-cloudinary-storage
+   ```
 
 5. Install the summer note WYSIWYG editor
 
+   ```
    pip3 install django-summernote
+   ```
 
 6. Install django-allauth package
    
+   ```
    pip3 install django-allauth
+   ```
 
 7. Install the witenoise package
 
+   ```
    pip install whitenoise
+   ```
 
 8. Create a new file, named env.py, on the top level directory
 
@@ -439,9 +455,10 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
     
     2. Run the migrations
 
+       ```
        python3 manage.py makemigrations
-
        python3 manage.py migrate
+       ```
 
 
 11. If you need to use in your local deploy, the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
@@ -450,6 +467,7 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
     os.environ["DATABASE_URL"] = "postgres://ldykbbxlynpvbu:3c2dc3ad004f84b932b67e75e299a7c618a12607c2400e82a9397ca8d7902549@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/dd77cfpqto48el"
     os.environ["HEROKU_POSTGRESQL_AMBER_URL"] = "postgres://nbtoigxrzzdxgp:412963f5cb52081534480a65d581c03688f38312187b7428f7f94b4913683c8e@ec2-176-34-211-0.eu-west-1.compute.amazonaws.com:5432/d1q601nu0ev5kr"
     ```
+
     Notes:
     * Using this DATABASE_URL is dangerous. You may accidentaly delete production data. It would be better to use a local database as described in step 10.
     * This DATABASE_URL is the main database.
