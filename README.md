@@ -184,7 +184,7 @@ Before starting working on the user stories, the following steps were taken, to 
 * Install dj3-cloudinary-storage django package for integration with cloudinary
 * Create a new django project, named tasty_project
 * Create a new app, named whats_for_dinner_app
-* Update settings.py with the new app, allowed hosts, cloudinary settings, getting of secret key and database url, templates dir, root url configuration, wsgi application, static url and media url configuration
+* Update settings.py file inside tasty_project, adding the new app, allowed hosts, cloudinary settings, getting of secret key and database url, templates dir, root url configuration, wsgi application, static url and media url configuration
 * Update urls.py and admin.py, allowing django admin module to manage recipes
 * Insert some recipe sample records, preparing for the development of the view recipe list functionality
 
@@ -422,7 +422,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       heroku config:set DISABLE_COLLECTSTATIC=1
       ```
       
-   6. Update the settings.py file adding the URL of the application you are deploying
+   6. Update the settings.py file inside tasty_project, adding the URL of the application you are deploying
    
       1. Add 'whats-for-dinner-new.herokuapp.com' to the allowed hosts
          ![image](https://user-images.githubusercontent.com/87392921/174455886-0a5a5c8e-ef8c-4701-b645-9f791a978b81.png)
@@ -534,7 +534,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
 
 5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
 
-   1. In the settings.py file, comment the lines 114 to 126 and then add the following lines
+   1. In the tasty_project/settings.py file, comment the lines 114 to 126 and then add the following lines
 
        ```
        DATABASES = {
