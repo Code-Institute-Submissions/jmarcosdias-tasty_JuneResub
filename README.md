@@ -397,7 +397,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       ```
       ![image](https://user-images.githubusercontent.com/87392921/174455668-ddde103b-07f4-4a7f-81a6-0c99063ec07f.png)
 
-      You can then check by using the following command
+      You can then check heroku remote was created, by using the following command
       ```
       git remote -v
       ```
@@ -405,13 +405,12 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       
    3. Use heroku config to set the CLOUDINARY_URL variable
       ```
-      heroku config:set CLOUDINARY_URL=cloudinary://658724693665645:m6176WxJpqf2JKhLCRfdoZh1hOk@marcos-dias
+      heroku config:set CLOUDINARY_URL='<cloudinary details details here>'
       ```
-      ![image](https://user-images.githubusercontent.com/87392921/174455813-57d8d591-cd57-46ee-a857-a30140008423.png)
 
    4. Use heroku config to set the SECRET_KEY variable
       ```
-      heroku config:set SECRET_KEY='your-secret-key'
+      heroku config:set SECRET_KEY='<your secret key here>'
       ```
       ![image](https://user-images.githubusercontent.com/87392921/174455872-a4239d88-9241-4318-a1d9-06e2e9f784ab.png)
 
@@ -421,8 +420,21 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       ```
       heroku config:set DISABLE_COLLECTSTATIC=1
       ```
+   
+   6. Use heroku ```addons:create``` to create the main database
+      ```
+      heroku addons:create heroku-postgresql --as=DATABASE
+      ```
       
-   6. Update the settings.py file inside tasty_project, adding the URL of the application you are deploying
+   7. Use heroku ```addons:create``` to create the database for automated tests
+       
+       ```
+       heroku addons:create heroku-postgresql --as=HEROKU_POSTGRESQL_AMBER
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456231-0754f991-d7c8-4b33-9531-2a629e77a93a.png)
+       
+      
+   8. Update the settings.py file inside tasty_project, adding the URL of the application you are deploying
    
       1. Add 'whats-for-dinner-new.herokuapp.com' to the allowed hosts
          ![image](https://user-images.githubusercontent.com/87392921/174455886-0a5a5c8e-ef8c-4701-b645-9f791a978b81.png)
@@ -433,12 +445,12 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
          git commit -m "Update allowed hosts in settings.py file"
          ```
       
-   7. Push to heroku git repository
+   9. Push to heroku git repository
       ```
       git push heroku main
       ```
       
-   8. Use heroku config to unset disable collect static
+   10. Use heroku config to unset disable collect static
       ```
       heroku config:unset DISABLE_COLLECTSTATIC
       ```
@@ -449,22 +461,12 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       heroku run python3 manage.py makemigrations
       ```
       ![image](https://user-images.githubusercontent.com/87392921/174456190-2f3fe4a6-fb81-48be-8a7c-b003fc83a78b.png)
-
       
    10. Use heroku run to migrate
        ```
        heroku run python3 manage.py migrate
        ```
        ![image](https://user-images.githubusercontent.com/87392921/174456204-534ca8f2-8a91-4b73-bf64-3c817ee10db3.png)
-
-       
-   11. Use heroku ```addons:create``` to create the database for automated tests
-       
-       ```
-       heroku addons:create heroku-postgresql --as=HEROKU_POSTGRESQL_AMBER
-       ```
-       ![image](https://user-images.githubusercontent.com/87392921/174456231-0754f991-d7c8-4b33-9531-2a629e77a93a.png)
-
        
    12. Use heroku run to run automated tests
        ```
@@ -527,10 +529,12 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
    ```
    import os
    os.environ["SECRET_KEY"] = "a secret key you define"
-   os.environ["CLOUDINARY_URL"] = "cloudinary://658724693665645:m6176WxJpqf2JKhLCRfdoZh1hOk@marcos-dias"
+   os.environ["CLOUDINARY_URL"] = "cloudinary details here"
    ```
 
    You need to update the second line of env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
+   
+   In the third line of env.py file, you need to include the cloudinary details
 
 5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
 
@@ -562,12 +566,12 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
 6. If you need to use in your local deploy, the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
 
     ```
-    os.environ["DATABASE_URL"] = "postgres://ldykbbxlynpvbu:3c2dc3ad004f84b932b67e75e299a7c618a12607c2400e82a9397ca8d7902549@ec2-54-170-90-26.eu-west-1.compute.amazonaws.com:5432/dd77cfpqto48el"
-    os.environ["HEROKU_POSTGRESQL_AMBER_URL"] = "postgres://nbtoigxrzzdxgp:412963f5cb52081534480a65d581c03688f38312187b7428f7f94b4913683c8e@ec2-176-34-211-0.eu-west-1.compute.amazonaws.com:5432/d1q601nu0ev5kr"
+    os.environ["DATABASE_URL"] = "URL of the main postgres database."
+    os.environ["HEROKU_POSTGRESQL_AMBER_URL"] = "URL of the postgres database used for automated tests"
     ```
 
     Notes:
-    * Using this DATABASE_URL is dangerous. You may accidentaly delete production data. It would be better to use a local database as described in step 5.
+    * Using the production DATABASE_URL is dangerous. You may accidentaly delete or update production data. It would be better to use a local database as described in step 5.
     * This DATABASE_URL is the main database.
     * This HEROKU_POSTGRESQL_AMBER_URL is the database used by the automated tests.
     
