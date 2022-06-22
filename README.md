@@ -180,7 +180,7 @@ Before starting working on the user stories, the following steps were taken, to 
 * Install django framework 
 * Install gunicorn http server
 * Install dj-database-url python package to use with postgresql
-* Install psycopg2 postgresql data base adapter
+* Install psycopg2 postgresql database adapter
 * Install dj3-cloudinary-storage django package for integration with cloudinary
 * Create a new django project, named tasty_project
 * Create a new app, named whats_for_dinner_app
@@ -257,7 +257,7 @@ There was only one user story in the to do column of the Kanban board so it was 
 
 It was decided to implement the welcome page in the view recipe list page. This way a new user and a returning user will have access to a quick explanation about the website each time they visit it. This user story consists in updating the view recipe list with a welcome explanation.
 
-There is some time before the delivery day. This way the following new tasks were indentified and placed into the Kanban board.
+There is some time before the delivery day. This way the following new tasks were identified and placed into the Kanban board.
 
 **TASK: Improve appearance of the landing page**
 
@@ -272,7 +272,7 @@ Mon May 23 21:32:50 2022 +0100
 
 ### Changes to the landing page contents and appearance done
 
-The landpage is now with the intended design and content for this version of the project, to be delivered on 28th of May.
+The landing page is now with the intended design and content for this version of the project, to be delivered on 28th of May.
 
 New tasks were created to style each of the remaining pages.
 
@@ -283,7 +283,7 @@ Wed May 25 02:35:00 2022 +0100
 
 ### Styling the main pages
 
-Tasks updated and repositioned accordingly to the current need. One task was renamed to follow the naming convention of others (task #10). One task was created (task #16).
+Tasks were updated and repositioned accordingly to the current need. One task was renamed to follow the naming convention of others (task #10). One task was created (task #16).
 
 The focus now is on styling the main pages of the project.
 
@@ -304,7 +304,7 @@ Wed May 26 01:42:00 2022 +0100
 
 ### Styling the login, logout and register pages
 
-Tasks updated and repositioned accordingly to the current need. One task was created (task #17).
+Tasks were updated and repositioned accordingly to the current need. One task was created (task #17).
 The focus now is on styling the authentication-related pages.
 
 Wed May 26 12:52:00 2022 +0100
@@ -329,15 +329,15 @@ Wed May 28 11:05:00 2022 +0100
 
 ### Manual tests
 
-The following manual testing scenarios were defined and successfuly carried out along the development.
+The following manual testing scenarios were defined and successfully carried out along the development.
 
 #### Navigation on the entire site
 
-Navigate to each page, following the available links. Make this navigation works good.
+Navigate to each page, following the available links. Make sure the navigation works well.
 
 Navigate to not authorized pages, typing directly the url to delete recipe, edit recipe and create recipe. Make sure an appropriate message is displayed. This test must be done:
-1. With non-logged-in users trying to create, edit and delete recipe.
-2. With logged-in users that are not owner of a recipe, trying to edit and delete that recipe.
+1. With non-logged-in users trying to create, edit and delete recipes.
+2. With logged-in users that are not owners of a recipe, trying to edit and delete that recipe.
 
 #### Broken links
 
@@ -365,11 +365,11 @@ Files reviewd:
 
 ### Automated tests
 
-The automated tests are currently developed in the test_models.py and test_views.py and the can be kicked off by the following command.
+The automated tests are currently developed in the test_models.py and test_views.py and they can be kicked off by the following command.
 
 python3 manage.py test --keepdb
 
-A separate testing data base is used so that the data is not mixed up with the production data.
+A separate testing database is used so that the data is not mixed up with the production data.
 
 ## Deployment
 
@@ -399,7 +399,7 @@ When deploying, you can use any other available name for the heroku app. For exa
       ```
       ![image](https://user-images.githubusercontent.com/87392921/174455668-ddde103b-07f4-4a7f-81a6-0c99063ec07f.png)
 
-      You can then check heroku remote was created, by using the following command and making sure you see those two heroku lines.
+      You can then confirm that the heroku remote has been created, by using the following command and making sure you see those two heroku lines.
       ```
       git remote -v
       ```
@@ -535,9 +535,9 @@ When deploying, you can use any other available name for the heroku app. For exa
    os.environ["CLOUDINARY_URL"] = "<cloudinary details>"
    ```
    
-   Update the second line of env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
+   Update the second line of the env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
    
-   In the third line of env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
+   In the third line of the env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
 
 5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
 
@@ -574,7 +574,7 @@ When deploying, you can use any other available name for the heroku app. For exa
     ```
 
     Notes:
-    * Using the production DATABASE_URL is dangerous. You may accidentaly delete or update production data. It would be better to use a local database as described in step 5.
+    * Using the production DATABASE_URL is dangerous. You may accidentally delete or update production data. It would be better to use a local database as described in step 5.
     * This DATABASE_URL is the main database.
     * This HEROKU_POSTGRESQL_AMBER_URL is the database used for the automated tests.
     
