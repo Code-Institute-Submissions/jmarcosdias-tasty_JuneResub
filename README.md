@@ -410,7 +410,7 @@ When deploying, you can use any other available name for the heroku app. For exa
       heroku config:set CLOUDINARY_URL='<cloudinary details>'
       ```
       
-      Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
+      Use the value of "API Environment variable" available in the cloudinary account for cloudinary details.
       
    4. Use heroku config to set the SECRET_KEY variable
       ```
@@ -457,8 +457,7 @@ When deploying, you can use any other available name for the heroku app. For exa
       ```
       heroku config:unset DISABLE_COLLECTSTATIC
       ```
-      ![image](https://user-images.githubusercontent.com/87392921/174456112-0e885306-e787-438d-86c1-680f90145635.png)
-
+      
    9. Use heroku run to make migrations
       ```
       heroku run python3 manage.py makemigrations
@@ -537,7 +536,7 @@ When deploying, you can use any other available name for the heroku app. For exa
    
    Update the second line of the env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
    
-   In the third line of the env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
+   In the third line of the env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for cloudinary details.
 
 5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
 
