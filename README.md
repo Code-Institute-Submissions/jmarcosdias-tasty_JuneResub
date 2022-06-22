@@ -379,7 +379,9 @@ Here is the link for the live site https://whats--for--dinner.herokuapp.com/
 
 ### How to deploy the site to heroku
 
-As this site is currently deployed to heroku https://whats--for--dinner.herokuapp.com/, the below instructions are detailing how to deploy the site to https://whats-for-dinner-new.herokuapp.com/. In other words, these instructions describe how to deploy this application to heroku, using the whats-for-dinner-new name for the heroku app. You can use any other available name at heroku, when deploying, in case the  whats-for-dinner-new name is not available at that time.
+The below instructions detail how to deploy the site to https://whats-for-dinner-new.herokuapp.com/. In other words, these instructions describe how to deploy this application to heroku, using the whats-for-dinner-new name for the heroku app.
+
+When deploying, you can use any other available name for the heroku app. For example, this site is currently deployed to heroku, using the whats--for--dinner name for the heroku app (https://whats--for--dinner.herokuapp.com/).
 
 1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
 
@@ -397,7 +399,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       ```
       ![image](https://user-images.githubusercontent.com/87392921/174455668-ddde103b-07f4-4a7f-81a6-0c99063ec07f.png)
 
-      You can then check heroku remote was created, by using the following command
+      You can then check heroku remote was created, by using the following command and making sure you see those two heroku lines.
       ```
       git remote -v
       ```
@@ -405,15 +407,16 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
       
    3. Use heroku config to set the CLOUDINARY_URL variable
       ```
-      heroku config:set CLOUDINARY_URL='<cloudinary details details here>'
+      heroku config:set CLOUDINARY_URL='<cloudinary details>'
       ```
-
+      
+      Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
+      
    4. Use heroku config to set the SECRET_KEY variable
       ```
-      heroku config:set SECRET_KEY='<your secret key here>'
+      heroku config:set SECRET_KEY='<a secret key you define>'
       ```
-      ![image](https://user-images.githubusercontent.com/87392921/174455872-a4239d88-9241-4318-a1d9-06e2e9f784ab.png)
-
+      
       You can use an online secret key generator to generate your secret key, for example https://django-secret-key-generator.netlify.app.
       
    5. Use heroku config to set disable collect static   
@@ -528,13 +531,13 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
 
    ```
    import os
-   os.environ["SECRET_KEY"] = "a secret key you define"
-   os.environ["CLOUDINARY_URL"] = "cloudinary details here"
+   os.environ["SECRET_KEY"] = "<a secret key you define>"
+   os.environ["CLOUDINARY_URL"] = "<cloudinary details>"
    ```
-
-   You need to update the second line of env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
    
-   In the third line of env.py file, you need to include the cloudinary details
+   Update the second line of env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
+   
+   In the third line of env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for <cloudinary details>.
 
 5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
 
@@ -563,7 +566,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
        ```
 
 
-6. If you need to use in your local deploy, the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
+6. If you need to use in your local deploy the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
 
     ```
     os.environ["DATABASE_URL"] = "URL of the main postgres database."
@@ -573,7 +576,7 @@ As this site is currently deployed to heroku https://whats--for--dinner.herokuap
     Notes:
     * Using the production DATABASE_URL is dangerous. You may accidentaly delete or update production data. It would be better to use a local database as described in step 5.
     * This DATABASE_URL is the main database.
-    * This HEROKU_POSTGRESQL_AMBER_URL is the database used by the automated tests.
+    * This HEROKU_POSTGRESQL_AMBER_URL is the database used for the automated tests.
     
 7. Run the automated tests
    ```
