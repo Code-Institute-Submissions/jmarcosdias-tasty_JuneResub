@@ -8,14 +8,17 @@
    1. [User Stories](#user-stories)
    2. [Wireframes](#wireframes)
    3. [Data Model](#data-model)
-7. [Initial setup](#initial-setup)
-8. [Project follow-up](#project-follow-up)
-9. [Testing](#testing)
+4. [Initial setup](#initial-setup)
+5. [Project follow-up](#project-follow-up)
+6. [Testing](#testing)
    1. [Manual tests](#manual-tests)
    2. [Validator tests](#validator-tests)
    3. [Automated tests](#automated-tests)
-10. [Deployment](#deployment)
-11. [Credits](#credits)
+7. [Deployment](#deployment)
+   1. [How to deploy the site to heroku](#how-to-deploy-the-site-to-heroku)
+   2. [How to deploy the site locally](#how-to-deploy-the-site-locally)
+8. [Credits](#credits)
+
 
 ## Purpose
 
@@ -177,11 +180,11 @@ Before starting working on the user stories, the following steps were taken, to 
 * Install django framework 
 * Install gunicorn http server
 * Install dj-database-url python package to use with postgresql
-* Install psycopg2 postgresql data base adapter
+* Install psycopg2 postgresql database adapter
 * Install dj3-cloudinary-storage django package for integration with cloudinary
 * Create a new django project, named tasty_project
 * Create a new app, named whats_for_dinner_app
-* Update settings.py with the new app, allowed hosts, cloudinary settings, getting of secret key and database url, templates dir, root url configuration, wsgi application, static url and media url configuration
+* Update settings.py file inside tasty_project, adding the new app, allowed hosts, cloudinary settings, getting of secret key and database url, templates dir, root url configuration, wsgi application, static url and media url configuration
 * Update urls.py and admin.py, allowing django admin module to manage recipes
 * Insert some recipe sample records, preparing for the development of the view recipe list functionality
 
@@ -254,7 +257,7 @@ There was only one user story in the to do column of the Kanban board so it was 
 
 It was decided to implement the welcome page in the view recipe list page. This way a new user and a returning user will have access to a quick explanation about the website each time they visit it. This user story consists in updating the view recipe list with a welcome explanation.
 
-There is some time before the delivery day. This way the following new tasks were indentified and placed into the Kanban board.
+There is some time before the delivery day. This way the following new tasks were identified and placed into the Kanban board.
 
 **TASK: Improve appearance of the landing page**
 
@@ -269,7 +272,7 @@ Mon May 23 21:32:50 2022 +0100
 
 ### Changes to the landing page contents and appearance done
 
-The landpage is now with the intended design and content for this version of the project, to be delivered on 28th of May.
+The landing page is now with the intended design and content for this version of the project, to be delivered on 28th of May.
 
 New tasks were created to style each of the remaining pages.
 
@@ -280,7 +283,7 @@ Wed May 25 02:35:00 2022 +0100
 
 ### Styling the main pages
 
-Tasks updated and repositioned accordingly to the current need. One task was renamed to follow the naming convention of others (task #10). One task was created (task #16).
+Tasks were updated and repositioned accordingly to the current need. One task was renamed to follow the naming convention of others (task #10). One task was created (task #16).
 
 The focus now is on styling the main pages of the project.
 
@@ -301,7 +304,7 @@ Wed May 26 01:42:00 2022 +0100
 
 ### Styling the login, logout and register pages
 
-Tasks updated and repositioned accordingly to the current need. One task was created (task #17).
+Tasks were updated and repositioned accordingly to the current need. One task was created (task #17).
 The focus now is on styling the authentication-related pages.
 
 Wed May 26 12:52:00 2022 +0100
@@ -326,15 +329,15 @@ Wed May 28 11:05:00 2022 +0100
 
 ### Manual tests
 
-The following manual testing scenarios were defined and successfuly carried out along the development.
+The following manual testing scenarios were defined and successfully carried out along the development.
 
 #### Navigation on the entire site
 
-Navigate to each page, following the available links. Make this navigation works good.
+Navigate to each page, following the available links. Make sure the navigation works well.
 
 Navigate to not authorized pages, typing directly the url to delete recipe, edit recipe and create recipe. Make sure an appropriate message is displayed. This test must be done:
-1. With non-logged-in users trying to create, edit and delete recipe.
-2. With logged-in users that are not owner of a recipe, trying to edit and delete that recipe.
+1. With non-logged-in users trying to create, edit and delete recipes.
+2. With logged-in users that are not owners of a recipe, trying to edit and delete that recipe.
 
 #### Broken links
 
@@ -362,17 +365,229 @@ Files reviewd:
 
 ### Automated tests
 
-The automated tests are currently developed in the test_models.py and test_views.py and the can be kicked off by the following command.
+The automated tests are currently developed in the test_models.py and test_views.py and they can be kicked off by the following command.
 
 python3 manage.py test --keepdb
 
-A separate testing data base is used so that the data is not mixed up with the production data.
+A separate testing database is used so that the data is not mixed up with the production data.
 
 ## Deployment
 
 The website is deployed to [heroku](https://heroku.com).
 
 Here is the link for the live site https://whats--for--dinner.herokuapp.com/
+
+### How to deploy the site to heroku
+
+The below instructions detail how to deploy the site to https://whats-for-dinner-new.herokuapp.com/. In other words, these instructions describe how to deploy this application to heroku, using the whats-for-dinner-new name for the heroku app.
+
+When deploying, you can use any other available name for the heroku app. For example, this site is currently deployed to heroku, using the whats--for--dinner name for the heroku app (https://whats--for--dinner.herokuapp.com/).
+
+1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
+
+2. In the GitPod workspace
+
+   1. Login to heroku
+      ```
+      heroku login -i
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455490-581e5017-b084-4f99-bd9c-3b942ca94b70.png)
+
+   2. Create heroku remote for a new app choosing Europe region
+      ```
+      heroku create -a whats-for-dinner-new --region eu
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455668-ddde103b-07f4-4a7f-81a6-0c99063ec07f.png)
+
+      You can then confirm that the heroku remote has been created, by using the following command and making sure you see those two heroku lines.
+      ```
+      git remote -v
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174455691-22f1b20e-5406-4cb5-8d98-52a9a39c0731.png)
+      
+   3. Use heroku config to set the CLOUDINARY_URL variable
+      ```
+      heroku config:set CLOUDINARY_URL='<cloudinary details>'
+      ```
+      
+      Use the value of "API Environment variable" available in the cloudinary account for cloudinary details.
+      
+   4. Use heroku config to set the SECRET_KEY variable
+      ```
+      heroku config:set SECRET_KEY='<a secret key you define>'
+      ```
+      
+      You can use an online secret key generator to generate your secret key, for example https://django-secret-key-generator.netlify.app.
+      
+   5. Use heroku config to set disable collect static   
+      ```
+      heroku config:set DISABLE_COLLECTSTATIC=1
+      ```
+   
+   6. Use heroku ```addons:create``` to create the main database
+      ```
+      heroku addons:create heroku-postgresql --as=DATABASE
+      ```
+      
+   7. Use heroku ```addons:create``` to create the database for automated tests
+       
+       ```
+       heroku addons:create heroku-postgresql --as=HEROKU_POSTGRESQL_AMBER
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456231-0754f991-d7c8-4b33-9531-2a629e77a93a.png)
+       
+      
+   8. Update the settings.py file inside tasty_project, adding the URL of the application you are deploying
+   
+      1. Add 'whats-for-dinner-new.herokuapp.com' to the allowed hosts
+         ![image](https://user-images.githubusercontent.com/87392921/174455886-0a5a5c8e-ef8c-4701-b645-9f791a978b81.png)
+      
+      2. Commit your changes
+         ```
+         git add .
+         git commit -m "Update allowed hosts in settings.py file"
+         ```
+      
+   9. Push to heroku git repository
+      ```
+      git push heroku main
+      ```
+      
+   10. Use heroku config to unset disable collect static
+      ```
+      heroku config:unset DISABLE_COLLECTSTATIC
+      ```
+      
+   9. Use heroku run to make migrations
+      ```
+      heroku run python3 manage.py makemigrations
+      ```
+      ![image](https://user-images.githubusercontent.com/87392921/174456190-2f3fe4a6-fb81-48be-8a7c-b003fc83a78b.png)
+      
+   10. Use heroku run to migrate
+       ```
+       heroku run python3 manage.py migrate
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456204-534ca8f2-8a91-4b73-bf64-3c817ee10db3.png)
+       
+   12. Use heroku run to run automated tests
+       ```
+       heroku run python3 manage.py test --keepdb
+       ```
+       ![image](https://user-images.githubusercontent.com/87392921/174456257-db071f6f-e726-4773-99e3-584165a70bb5.png)
+
+   13. Congratulations! Your application is deployed to https://whats-for-dinner-new.herokuapp.com/ 
+
+### How to deploy the site locally
+
+1. Create a GitPod workspace based on the main branch of the [GitHub repository](https://github.com/jmarcosdias/tasty)
+
+2. Install the required packages based on the requirements.txt file
+
+   ```
+   pip3 install -r requirements.txt
+   ```
+   
+   Another option would be to install the following:
+   
+   1. Install the django framework and the gunicorn http server
+   ```
+   pip3 install 'django<4' gunicorn
+   ```
+
+   2. Install the dj_database_url library and the psycopg2 database adapter
+   ```
+   pip3 install dj_database_url psycopg2
+   ```
+
+   3. Install libraries to run cloudinary
+
+   ```
+   pip3 install dj3-cloudinary-storage
+   ```
+
+   4. Install the summer note WYSIWYG editor
+   
+   ```
+   pip3 install django-summernote
+   ```
+
+   5. Install django-allauth package
+   
+   ```
+   pip3 install django-allauth
+   ```
+
+   6. Install the witenoise package
+
+   ```
+   pip install whitenoise
+   ```
+
+3. Create a new file, named env.py, on the top level directory
+
+4. Add the following three lines to the env.py file. 
+
+   ```
+   import os
+   os.environ["SECRET_KEY"] = "<a secret key you define>"
+   os.environ["CLOUDINARY_URL"] = "<cloudinary details>"
+   ```
+   
+   Update the second line of the env.py file with a secret key you define. If you want, you can use a secret key generator, for example https://django-secret-key-generator.netlify.app/, to define the secret key.
+   
+   In the third line of the env.py file, include the cloudinary details. Use the value of "API Environment variable" available in the cloudinary account for cloudinary details.
+
+5. If you want to use local databases in your local installation, do the following, then ignore the step 6 and go to step 7
+
+   1. In the tasty_project/settings.py file, comment the lines 114 to 126 and then add the following lines
+
+       ```
+       DATABASES = {
+         'default': {
+           'ENGINE': 'django.db.backends.sqlite3',
+           'NAME': BASE_DIR / 'db.sqlite3',
+           'TEST': {
+               'NAME': 'test_database',
+           }
+         }
+       }
+       ```  
+    
+    2. Make migrations and migrate
+
+       ```
+       python3 manage.py makemigrations
+       ```
+       
+       ```
+       python3 manage.py migrate
+       ```
+
+
+6. If you need to use in your local deploy the heroku databases that are currently used by the live site (https://whats--for--dinner.herokuapp.com/), add the following 2 lines to the env.py file
+
+    ```
+    os.environ["DATABASE_URL"] = "URL of the main postgres database."
+    os.environ["HEROKU_POSTGRESQL_AMBER_URL"] = "URL of the postgres database used for automated tests"
+    ```
+
+    Notes:
+    * Using the production DATABASE_URL is dangerous. You may accidentally delete or update production data. It would be better to use a local database as described in step 5.
+    * This DATABASE_URL is the main database.
+    * This HEROKU_POSTGRESQL_AMBER_URL is the database used for the automated tests.
+    
+7. Run the automated tests
+   ```
+   python3 manage.py test --keepdb
+   ```
+    
+8. Congratulations. The website is deployed locally
+    
+    To run the server locally:
+    ```
+    python3 manage.py runserver
+    ```
 
 ## Credits
 
