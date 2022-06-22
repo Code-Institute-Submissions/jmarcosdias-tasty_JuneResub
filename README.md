@@ -576,6 +576,13 @@ When deploying, you can use any other available name for the heroku app. For exa
     * Using the production DATABASE_URL is dangerous. You may accidentally delete or update production data. It would be better to use a local database as described in step 5.
     * This DATABASE_URL is the main database.
     * This HEROKU_POSTGRESQL_AMBER_URL is the database used for the automated tests.
+    * You should not need to make migrations and migrate, but if you want you can do it
+       ```
+       python3 manage.py makemigrations
+       ```   
+       ```
+       python3 manage.py migrate
+       ```
     
 7. Run the automated tests
    ```
